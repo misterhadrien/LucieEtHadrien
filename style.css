@@ -1,0 +1,285 @@
+:root {
+    --olive: #5d6b50;
+    --cream: #f6f2e9;
+    --beige: #e7dfcf;
+    --dark: #30352d;
+    --lavender: #a79ab8;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "DM Sans", sans-serif;
+    color: var(--dark);
+    background: var(--cream);
+}
+
+h1,
+h2 {
+    font-family: "Playfair Display", serif;
+    font-weight: 500;
+}
+
+
+/* NAVIGATION */
+
+nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 30px 6%;
+
+    z-index: 10;
+}
+
+.logo {
+    font-family: "Playfair Display", serif;
+    font-size: 24px;
+}
+
+.menu {
+    display: flex;
+    gap: 30px;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+
+/* HERO */
+
+.hero {
+    height: 100vh;
+    min-height: 700px;
+
+    background:
+        linear-gradient(
+            rgba(40,45,35,0.35),
+            rgba(40,45,35,0.35)
+        ),
+        url("images/fond.jpg");
+
+    background-size: cover;
+    background-position: center;
+
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+}
+
+.hero-content {
+    margin-top: 50px;
+}
+
+.small-title,
+.section-label {
+    letter-spacing: 4px;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.hero h1 {
+    font-size: clamp(70px, 10vw, 130px);
+    line-height: 0.85;
+    margin: 30px 0;
+}
+
+.hero h1 span {
+    font-size: 0.45em;
+}
+
+.date {
+    letter-spacing: 5px;
+    font-size: 14px;
+    margin-bottom: 40px;
+}
+
+
+/* BUTTON */
+
+.button {
+    display: inline-block;
+
+    padding: 15px 28px;
+
+    background: var(--olive);
+    color: white;
+
+    text-decoration: none;
+
+    border-radius: 2px;
+
+    font-size: 13px;
+
+    transition: 0.3s;
+}
+
+.button:hover {
+    transform: translateY(-2px);
+}
+
+
+/* SECTIONS */
+
+.section {
+    padding: 120px 10%;
+    text-align: center;
+}
+
+.section h2 {
+    font-size: clamp(40px, 5vw, 65px);
+    margin: 25px auto;
+    max-width: 800px;
+}
+
+.text {
+    max-width: 650px;
+    margin: 15px auto;
+    line-height: 1.8;
+}
+
+
+/* PROGRAMME */
+
+.program {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    min-height: 650px;
+}
+
+.program-image {
+    overflow: hidden;
+}
+
+.program-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.program-content {
+    padding: 100px 10%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.program-content h2 {
+    font-size: 60px;
+    margin: 25px 0 50px;
+}
+
+.timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.timeline div {
+    display: flex;
+    gap: 30px;
+}
+
+.timeline strong {
+    width: 60px;
+}
+
+
+/* COUNTDOWN */
+
+.countdown {
+    padding: 100px 20px;
+    text-align: center;
+
+    background: var(--beige);
+}
+
+.countdown h2 {
+    font-size: 80px;
+    margin: 20px;
+}
+
+
+/* RSVP */
+
+.rsvp {
+    padding: 130px 20px;
+    text-align: center;
+
+    background: var(--olive);
+    color: white;
+}
+
+.rsvp h2 {
+    font-size: 60px;
+    margin: 25px 0;
+}
+
+.rsvp p {
+    margin-bottom: 30px;
+}
+
+.button-light {
+    background: white;
+    color: var(--olive);
+}
+
+
+/* FOOTER */
+
+footer {
+    padding: 40px;
+    text-align: center;
+
+    font-family: "Playfair Display", serif;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+    .menu {
+        display: none;
+    }
+
+    .program {
+        grid-template-columns: 1fr;
+    }
+
+    .program-image {
+        height: 400px;
+    }
+
+    .program-content h2 {
+        font-size: 45px;
+    }
+
+    .rsvp h2 {
+        font-size: 45px;
+    }
+}
