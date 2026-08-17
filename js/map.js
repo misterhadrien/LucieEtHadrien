@@ -1,0 +1,160 @@
+/* ==========================================================================
+   Carte interactive — Leaflet + OpenStreetMap (gratuit, compatible GitHub Pages)
+   Les données (lieux, catégories, coordonnées du lieu du mariage) se
+   configurent dans js/config.js.
+   ========================================================================== */
+
+(function () {
+  "use strict";
+
+  var mapEl = document.getElementById("map");
+  if (!mapEl || typeof L === "undefined") return;
+
+  /* ---------- Catégories ---------- */
+  var CATEGORIES = {
+    mariage:     { label: "📍 Lieu du mariage", color: "#7D8B6F" },
+    hotel:       { label: "🏨 Hôtels",           color: "#C98F76" },
+    gite:        { label: "🏡 Gîtes / chambres d'hôtes", color: "#9CAF94" },
+    parking:     { label: "🚗 Parkings",         color: "#7A6E61" },
+    gare:        { label: "🚉 Gares",            color: "#BDB1CE" },
+    aeroport:    { label: "✈️ Aéroports",        color: "#8E9AAF" },
+    restaurant:  { label: "🍽️ Restaurants",     color: "#C08552" },
+    cafe:        { label: "☕ Cafés / boulangeries", color: "#D6A75C" },
+    supermarche: { label: "🛒 Supermarchés",     color: "#7FA08C" },
+    pharmacie:   { label: "💊 Pharmacies",       color: "#9CAF94" },
+    services:    { label: "🏥 Services utiles",  color: "#A0857A" },
+    tourisme:    { label: "🌿 Lieux touristiques", color: "#6A7A5E" }
+  };
+
+  var cfg = SITE_CONFIG.map;
+  var venue = cfg.venueCoords || null;
+
+  var center = venue
+    ? [venue.lat, venue.lng]
+    : [cfg.fallbackCenter.lat, cfg.fallbackCenter.lng];
+
+  var map = L.map(mapEl, { scrollWheelZoom: false }).setView(center, cfg.zoom);
+  map.on("click", function () { map.scrollWheelZoom.enable(); });
+  map.on("mouseout", function () { map.scrollWheelZoom.disable(); });
+
+  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    maxZoom: 18,
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+  }).addTo(map);
+
+  /* ---------- Distance (haversine, km) ---------- */
+  function distanceKm(a, b) {
+    var R = 6371, rad = Math.PI / 180;
+    var dLat = (b[0] - a[0]) * rad;
+    var dLng = (b[1] - a[1]) * rad;
+    var h = Math.sin(dLat / 2) ** 2 +
+            Math.cos(a[0] * rad) * Math.cos(b[0] * rad) * Math.sin(dLng / 2) ** 2;
+    return 2 * R * Math.asin(Math.sqrt(h));
+  }
+
+  function fmtDistance(km) {
+    return km < 1 ? Math.round(km * 1000) + " m" : km.toFixed(1).replace(".", ",") + " km";
+  }
+
+  /* ---------- Marqueurs ---------- */
+  var layers = {}; // catégorie -> LayerGroup
+  var venueLatLng = venue ? [venue.lat, venue.lng] : null;
+
+  SITE_CONFIG.places.forEach(function (place) {
+    var cat = CATEGORIES[place.category];
+    if (!cat || !place.coords) return; // lieu sans coordonnées : non affiché
+
+    var latLng = [place.coords[0], place.coords[1]];
+    var isVenue = place.category === "mariage";
+
+    var marker = L.circleMarker(latLng, {
+      radius: isVenue ? 11 : 8,
+      color: "#FAF6EE",
+      weight: 2,
+      fillColor: cat.color,
+      fillOpacity: 1
+    });
+
+    var distanceLine = "";
+    if (!isVenue && venueLatLng) {
+      distanceLine = "<p>À " + fmtDistance(distanceKm(venueLatLng, latLng)) +
+                     " du lieu du mariage</p>";
+    } else if (!isVenue && !venueLatLng) {
+      distanceLine = "<p>Distance : [coordonnées du lieu à compléter]</p>";
+    }
+
+    var routeUrl = "https://www.openstreetmap.org/directions?to=" +
+                   latLng[0] + "%2C" + latLng[1];
+
+    marker.bindPopup(
+      '<div class="map-popup">' +
+        "<h3>" + place.name + "</h3>" +
+        '<p class="map-popup__category">' + cat.label + "</p>" +
+        (place.address ? "<p>" + place.address + "</p>" : "") +
+        distanceLine +
+        (place.description ? "<p>" + place.description + "</p>" : "") +
+        '<a class="map-popup__route" href="' + routeUrl + '" target="_blank" rel="noopener">Itinéraire</a>' +
+      "</div>"
+    );
+
+    if (!layers[place.category]) {
+      layers[place.category] = L.layerGroup().addTo(map);
+    }
+    layers[place.category].addLayer(marker);
+  });
+
+  /* ---------- Légende (filtres cliquables) ---------- */
+  var legend = document.getElementById("map-legend");
+  if (legend) {
+    Object.keys(CATEGORIES).forEach(function (key) {
+      var cat = CATEGORIES[key];
+      var item = document.createElement("button");
+      item.type = "button";
+      item.className = "map-legend__item";
+      item.style.setProperty("--pin", cat.color);
+      item.setAttribute("aria-pressed", "true");
+      item.innerHTML = '<span class="map-legend__dot" aria-hidden="true"></span>' + cat.label;
+      item.addEventListener("click", function () {
+        var group = layers[key];
+        if (!group) return;
+        var on = map.hasLayer(group);
+        if (on) { map.removeLayer(group); } else { map.addLayer(group); }
+        item.classList.toggle("map-legend__item--off", on);
+        item.setAttribute("aria-pressed", on ? "false" : "true");
+      });
+      legend.appendChild(item);
+    });
+  }
+
+  /* ---------- Cartes hébergement (page d'accueil) ---------- */
+  var stayList = document.getElementById("stay-list");
+  if (stayList) {
+    SITE_CONFIG.stays.forEach(function (stay) {
+      var card = document.createElement("article");
+      card.className = "stay-card reveal-on-scroll";
+      card.innerHTML =
+        '<img class="stay-card__img" src="' + stay.image + '" alt="' + stay.name + '" width="600" height="450" loading="lazy">' +
+        '<div class="stay-card__body">' +
+          '<p class="stay-card__type">' + stay.type + "</p>" +
+          "<h3>" + stay.name + "</h3>" +
+          '<p class="stay-card__meta">📍 ' + stay.distance + " · <strong>" + stay.price + "</strong></p>" +
+          '<p class="stay-card__desc">' + stay.description + "</p>" +
+          '<div class="stay-card__actions">' +
+            '<a class="btn btn--primary btn--small" href="' + stay.link + '" target="_blank" rel="noopener">Voir l\'hébergement</a>' +
+          "</div>" +
+        "</div>";
+      stayList.appendChild(card);
+    });
+
+    // fallback placeholder pour les photos d'hébergement manquantes
+    stayList.querySelectorAll("img").forEach(function (img) {
+      img.addEventListener("error", function () {
+        img.src = "data:image/svg+xml;charset=utf-8," + encodeURIComponent(
+          '<svg xmlns="http://www.w3.org/2000/svg" width="600" height="450">' +
+          '<rect width="100%" height="100%" fill="#EFE7D8"/>' +
+          '<rect width="100%" height="100%" fill="none" stroke="#9CAF94" stroke-width="3" stroke-dasharray="10,8"/>' +
+          '<text x="50%" y="50%" text-anchor="middle" font-family="Georgia,serif" font-size="42" fill="#7A6E61">[Photo à ajouter]</text></svg>');
+      });
+    });
+  }
+})();
