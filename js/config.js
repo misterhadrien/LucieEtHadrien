@@ -104,7 +104,7 @@ var SITE_CONFIG = {
   //      - DELETE réservé au rôle "service_role" (modération par vous)
   // 3. Copiez l'URL du projet et la clé "anon" ci-dessous.
   supabase: {
-    url: "",        // ex. "https://xxxxxxxx.supabase.co"
-    anonKey: ""     // clé publique "anon" (jamais la clé service_role)
+    url: "https://dgnqyrrpwlulowbfswtm.supabase.co",        // ex. "https://xxxxxxxx.supabase.co"
+    anonKey: "sb_publishable_XRQ-Mp2Uc-wobaZjy0t7iQ_CxomcXyT"     // clé publique "anon" (jamais la clé service_role)
   }
 };
