@@ -33,27 +33,48 @@
     ? [venue.lat, venue.lng]
     : [cfg.fallbackCenter.lat, cfg.fallbackCenter.lng];
 
-   var map = L.map(mapEl, { 
-     scrollWheelZoom: false 
-   }).setView(center, cfg.zoom);
-   
-   L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-     maxZoom: 18,
-     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-   }).addTo(map);
-   
-   /* Recalcule automatiquement la taille de la carte */
-   if (typeof ResizeObserver !== "undefined") {
-     var mapResizeObserver = new ResizeObserver(function () {
-       map.invalidateSize();
-     });
-   
-     mapResizeObserver.observe(mapEl);
-   } else {
-     window.addEventListener("resize", function () {
-       map.invalidateSize();
-     });
-   }
+ /* ---------- Création de la carte ---------- */
+  var map = L.map(mapEl, {
+    scrollWheelZoom: false
+  }).setView(center, cfg.zoom);
+
+  /* ---------- Fond OpenStreetMap ---------- */
+  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    maxZoom: 18,
+    attribution:
+      '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+  }).addTo(map);
+
+  /* ---------- Correction automatique de la taille ---------- */
+  function refreshMapSize() {
+    map.invalidateSize();
+  }
+
+  /* Après le rendu initial */
+  setTimeout(refreshMapSize, 100);
+  setTimeout(refreshMapSize, 500);
+  setTimeout(refreshMapSize, 1000);
+
+  /* Lors d'un changement de taille de fenêtre */
+  window.addEventListener("resize", refreshMapSize);
+
+  /* Si la taille du conteneur change */
+  if (typeof ResizeObserver !== "undefined") {
+    var mapResizeObserver = new ResizeObserver(function () {
+      map.invalidateSize();
+    });
+
+    mapResizeObserver.observe(mapEl);
+  }
+
+  /* ---------- Zoom à la souris ---------- */
+  map.on("click", function () {
+    map.scrollWheelZoom.enable();
+  });
+
+  map.on("mouseout", function () {
+    map.scrollWheelZoom.disable();
+  });
 
   /* ---------- Distance (haversine, km) ---------- */
   function distanceKm(a, b) {
