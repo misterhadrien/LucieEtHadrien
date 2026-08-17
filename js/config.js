@@ -26,7 +26,7 @@ var SITE_CONFIG = {
   map: {
     // Coordonnées PROVISOIRES du lieu de mariage — À REMPLACER par les vraies.
     // format : { lat: 43.5297, lng: 5.4474 }
-    venueCoords: null,
+    venueCoords: { lat: 43.662742, lng: 5.184049 },
     // Centre de repli tant que les coordonnées du lieu ne sont pas connues
     // (zone Provence) :
     fallbackCenter: { lat: 43.5297, lng: 5.4474 },
