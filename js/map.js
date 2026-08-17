@@ -33,14 +33,27 @@
     ? [venue.lat, venue.lng]
     : [cfg.fallbackCenter.lat, cfg.fallbackCenter.lng];
 
-  var map = L.map(mapEl, { scrollWheelZoom: false }).setView(center, cfg.zoom);
-  map.on("click", function () { map.scrollWheelZoom.enable(); });
-  map.on("mouseout", function () { map.scrollWheelZoom.disable(); });
-
-  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-    maxZoom: 18,
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-  }).addTo(map);
+   var map = L.map(mapEl, { 
+     scrollWheelZoom: false 
+   }).setView(center, cfg.zoom);
+   
+   L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+     maxZoom: 18,
+     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+   }).addTo(map);
+   
+   /* Recalcule automatiquement la taille de la carte */
+   if (typeof ResizeObserver !== "undefined") {
+     var mapResizeObserver = new ResizeObserver(function () {
+       map.invalidateSize();
+     });
+   
+     mapResizeObserver.observe(mapEl);
+   } else {
+     window.addEventListener("resize", function () {
+       map.invalidateSize();
+     });
+   }
 
   /* ---------- Distance (haversine, km) ---------- */
   function distanceKm(a, b) {
