@@ -74,8 +74,8 @@ var SITE_CONFIG = {
     {
       name: "Prieuré de Badasset",
       category: "mariage",
-      coords: null, // [À COMPLÉTER] ex. : [43.5297, 5.4474]
-      address: "[Adresse du lieu]",
+      coords: [43.662742, 5.184049], // [À COMPLÉTER] ex. : [43.5297, 5.4474]
+      address: "D22, 13116 Vernègues",
       description: "Le lieu du mariage."
     },
     { name: "[Hôtel à ajouter]", category: "hotel", coords: null, address: "[À COMPLÉTER]", description: "" },
