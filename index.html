@@ -1,179 +1,367 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lucie &amp; Hadrien — 15 mai 2027</title>
+  <meta name="description" content="Site officiel du mariage de Lucie &amp; Hadrien, le 15 mai 2027 en Provence.">
 
-    <title>Notre mariage – Hadrien & Prénom</title>
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Lucie &amp; Hadrien — 15 mai 2027">
+  <meta property="og:description" content="Site officiel du mariage de Lucie &amp; Hadrien, le 15 mai 2027 en Provence.">
+  <meta property="og:image" content="/images/og-image.jpg">
+  <meta property="og:url" content="https://lucie-et-hadrien.fr">
+  <meta property="og:locale" content="fr_FR">
 
-    <meta name="description"
-          content="Toutes les informations concernant le mariage de Hadrien et Prénom.">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Lucie &amp; Hadrien — 15 mai 2027">
+  <meta name="twitter:description" content="Site officiel du mariage de Lucie &amp; Hadrien, le 15 mai 2027 en Provence.">
+  <meta name="twitter:image" content="/images/og-image.jpg">
 
-    <link rel="stylesheet" href="style.css">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@400;500;600&display=swap"
-          rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIINfQ3ynhWPXnRZJlvE03KpSMbMIl7nK2I="
+        crossorigin="">
 </head>
-
 <body>
 
-<header class="hero">
-
-    <nav>
-        <div class="logo">H & P</div>
-
-        <div class="menu">
-            <a href="#mariage">Notre mariage</a>
-            <a href="#programme">Programme</a>
-            <a href="#lieu">Lieu</a>
-            <a href="#rsvp">RSVP</a>
-        </div>
+  <!-- ============ Navigation ============ -->
+  <header class="nav" id="nav">
+    <a href="#accueil" class="nav__brand">L&nbsp;&amp;&nbsp;H</a>
+    <nav class="nav__menu" id="nav-menu" aria-label="Navigation principale">
+      <a href="#accueil">Accueil</a>
+      <a href="#histoire">Notre histoire</a>
+      <a href="#programme">Le programme</a>
+      <a href="#lieu">Le lieu</a>
+      <a href="provence.html">La Provence</a>
+      <a href="#infos">Infos pratiques</a>
+      <a href="playlist.html">Playlist</a>
+      <a href="livre-dor.html">Livre d'or</a>
+      <a href="#rsvp" class="nav__cta">RSVP</a>
     </nav>
+    <button class="nav__burger" id="nav-burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav-menu">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
 
-    <div class="hero-content">
+  <main>
 
-        <p class="small-title">NOUS ALLONS NOUS DIRE OUI</p>
+    <!-- ============ Hero ============ -->
+    <section class="hero" id="accueil">
+      <div class="hero__overlay" aria-hidden="true"></div>
+      <div class="hero__content">
+        <p class="hero__date reveal reveal--delay1">15 MAI 2027</p>
+        <h1 class="hero__title reveal">Lucie <span class="hero__amp">&amp;</span> Hadrien</h1>
+        <p class="hero__place reveal reveal--delay1">Provence</p>
+        <p class="hero__sentence reveal reveal--delay2">Nous avons hâte de partager cette belle journée avec vous.</p>
+        <a href="#histoire" class="btn btn--light reveal reveal--delay3">Découvrir notre mariage</a>
+      </div>
+    </section>
 
-        <h1>Hadrien<br>
-            <span>&</span><br>
-            Prénom
-        </h1>
-
-        <p class="date">15 MAI 2027</p>
-
-        <a class="button" href="#rsvp">
-            Confirmer ma présence
-        </a>
-
-    </div>
-
-</header>
-
-
-<section id="mariage" class="section">
-
-    <p class="section-label">NOTRE HISTOIRE</p>
-
-    <h2>Un jour à partager avec vous</h2>
-
-    <p class="text">
-        Après toutes ces années à deux, nous avons décidé de nous dire oui
-        entourés de notre famille et de nos amis.
-    </p>
-
-    <p class="text">
-        Nous avons hâte de partager cette journée avec vous
-        au cœur de la Provence.
-    </p>
-
-</section>
-
-
-<section id="programme" class="program">
-
-    <div class="program-image">
-        <img src="images/olivier.jpg" alt="Olivier">
-    </div>
-
-    <div class="program-content">
-
-        <p class="section-label">LE PROGRAMME</p>
-
-        <h2>Une journée<br>en Provence</h2>
-
-        <div class="timeline">
-
-            <div>
-                <strong>14h30</strong>
-                <span>Cérémonie laïque</span>
-            </div>
-
-            <div>
-                <strong>16h00</strong>
-                <span>Vin d'honneur</span>
-            </div>
-
-            <div>
-                <strong>19h30</strong>
-                <span>Dîner</span>
-            </div>
-
-            <div>
-                <strong>23h00</strong>
-                <span>Soirée & danse</span>
-            </div>
-
+    <!-- ============ Notre histoire ============ -->
+    <section class="section" id="histoire">
+      <div class="container">
+        <p class="section__eyebrow">Qui nous sommes</p>
+        <h2 class="section__title">Notre histoire</h2>
+        <div class="story">
+          <div class="story__media reveal-on-scroll">
+            <img src="images/couple-01.jpg" alt="Lucie et Hadrien" width="800" height="1000" loading="lazy">
+          </div>
+          <div class="story__text reveal-on-scroll">
+            <svg class="olive-branch" viewBox="0 0 120 40" aria-hidden="true" focusable="false">
+              <path d="M5 20 C 40 12, 80 12, 115 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              <ellipse cx="30" cy="14" rx="9" ry="4" transform="rotate(-18 30 14)" fill="currentColor" opacity=".55"/>
+              <ellipse cx="48" cy="24" rx="9" ry="4" transform="rotate(16 48 24)" fill="currentColor" opacity=".55"/>
+              <ellipse cx="68" cy="13" rx="9" ry="4" transform="rotate(-14 68 13)" fill="currentColor" opacity=".55"/>
+              <ellipse cx="88" cy="24" rx="9" ry="4" transform="rotate(14 88 24)" fill="currentColor" opacity=".55"/>
+            </svg>
+            <p class="story__lead">[Écrivez ici votre histoire]</p>
+            <p>[À COMPLÉTER — un second paragraphe si vous le souhaitez.]</p>
+            <p class="story__signature">Lucie &amp; Hadrien</p>
+          </div>
         </div>
+      </div>
+    </section>
 
-    </div>
+    <!-- ============ Le grand jour (compte à rebours) ============ -->
+    <section class="section section--tinted" id="grand-jour">
+      <div class="container container--narrow">
+        <p class="section__eyebrow">Le grand jour</p>
+        <h2 class="section__title">15 MAI 2027</h2>
+        <p class="section__subtitle">Cérémonie à 14h30, en Provence.</p>
+        <div class="countdown" role="timer" aria-label="Compte à rebours jusqu'au mariage">
+          <div class="countdown__unit"><span class="countdown__value" id="cd-days">—</span><span class="countdown__label">Jours</span></div>
+          <div class="countdown__unit"><span class="countdown__value" id="cd-hours">—</span><span class="countdown__label">Heures</span></div>
+          <div class="countdown__unit"><span class="countdown__value" id="cd-minutes">—</span><span class="countdown__label">Minutes</span></div>
+          <div class="countdown__unit"><span class="countdown__value" id="cd-seconds">—</span><span class="countdown__label">Secondes</span></div>
+        </div>
+        <div class="calendar-actions">
+          <a class="btn btn--primary" id="btn-google-calendar" href="#" target="_blank" rel="noopener" aria-label="Ajouter le mariage à Google Calendar">Google&nbsp;Calendar</a>
+          <a class="btn btn--primary" href="calendar.ics" download aria-label="Télécharger le fichier pour Apple Calendar ou Outlook">📅 Ajouter le mariage à mon calendrier</a>
+        </div>
+      </div>
+    </section>
 
-</section>
+    <!-- ============ Le programme ============ -->
+    <section class="section" id="programme">
+      <div class="container container--narrow">
+        <p class="section__eyebrow">Déroulé de la journée</p>
+        <h2 class="section__title">Le programme</h2>
+        <ol class="timeline">
+          <li class="timeline__item reveal-on-scroll">
+            <span class="timeline__time">14h30</span>
+            <div class="timeline__body">
+              <h3>Cérémonie laïque</h3>
+              <p>[À COMPLÉTER — lieu et détails de la cérémonie.]</p>
+            </div>
+          </li>
+          <li class="timeline__item reveal-on-scroll">
+            <span class="timeline__time">16h00</span>
+            <div class="timeline__body">
+              <h3>Vin d'honneur</h3>
+              <p>[À COMPLÉTER — détails du vin d'honneur.]</p>
+            </div>
+          </li>
+          <li class="timeline__item reveal-on-scroll">
+            <span class="timeline__time">19h30</span>
+            <div class="timeline__body">
+              <h3>Dîner</h3>
+              <p>[À COMPLÉTER — détails du dîner.]</p>
+            </div>
+          </li>
+          <li class="timeline__item reveal-on-scroll">
+            <span class="timeline__time">23h00</span>
+            <div class="timeline__body">
+              <h3>Soirée</h3>
+              <p>[À COMPLÉTER — détails de la soirée.]</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
 
+    <!-- ============ Le lieu ============ -->
+    <section class="section section--tinted" id="lieu">
+      <div class="container">
+        <p class="section__eyebrow">Nous nous y marions</p>
+        <h2 class="section__title">Le lieu</h2>
+        <p class="section__subtitle">Un écrin au cœur de la Provence</p>
+        <div class="venue">
+          <div class="venue__media reveal-on-scroll">
+            <img src="images/lieu-01.jpg" alt="Prieuré de Badasset" width="900" height="700" loading="lazy">
+          </div>
+          <div class="venue__info reveal-on-scroll">
+            <h3 class="venue__name">Prieuré de Badasset</h3>
+            <p class="venue__address">[Adresse du lieu]</p>
+            <!-- Intégration carte à venir : remplacer ce bloc par l'iframe Google Maps. -->
+            <div class="venue__map" aria-hidden="true">
+              <p>[Carte Google Maps à intégrer]</p>
+            </div>
+            <a class="btn btn--primary" href="[LIEN ITINÉRAIRE À AJOUTER]" target="_blank" rel="noopener">Voir l'itinéraire</a>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<section id="lieu" class="section location">
+    <!-- ============ Tout savoir autour du lieu (carte interactive) ============ -->
+    <section class="section" id="autour-du-lieu">
+      <div class="container">
+        <p class="section__eyebrow">Préparer votre séjour</p>
+        <h2 class="section__title">Tout savoir autour du lieu</h2>
+        <p class="section__subtitle">Tout ce dont vous avez besoin pour préparer votre séjour</p>
+        <div class="map-legend" id="map-legend" aria-label="Légende de la carte"></div>
+        <div class="map-wrap">
+          <div id="map" role="application" aria-label="Carte interactive des lieux autour du lieu du mariage"></div>
+        </div>
+      </div>
+    </section>
 
-    <p class="section-label">LE LIEU</p>
+    <!-- ============ Où dormir ? ============ -->
+    <section class="section section--tinted" id="hebergements">
+      <div class="container">
+        <p class="section__eyebrow">Séjourner près de nous</p>
+        <h2 class="section__title">Où dormir ?</h2>
+        <p class="section__subtitle">Quelques adresses que nous vous recommandons pour votre séjour</p>
+        <div class="cards cards--stay" id="stay-list"></div>
+        <a class="btn btn--primary" href="#hebergements">Voir tous les hébergements</a>
+      </div>
+    </section>
 
-    <h2>Prieuré de Badasset</h2>
+    <!-- ============ Infos pratiques ============ -->
+    <section class="section" id="infos">
+      <div class="container">
+        <p class="section__eyebrow">Bon à savoir</p>
+        <h2 class="section__title">Infos pratiques</h2>
+        <div class="cards">
+          <article class="card reveal-on-scroll">
+            <h3>Hébergement</h3>
+            <p>Pour prolonger la fête, retrouvez ici nos recommandations d'hébergements.</p>
+            <p class="card__todo">[À COMPLÉTER]</p>
+          </article>
+          <article class="card reveal-on-scroll">
+            <h3>Transport</h3>
+            <p>Nous vous communiquerons prochainement les informations concernant les transports.</p>
+          </article>
+          <article class="card reveal-on-scroll">
+            <h3>Parking</h3>
+            <p>[À COMPLÉTER — informations sur le stationnement.]</p>
+          </article>
+          <article class="card reveal-on-scroll">
+            <h3>Tenue</h3>
+            <p>Une tenue élégante et estivale — voir notre dress code ci-dessous.</p>
+          </article>
+          <article class="card reveal-on-scroll">
+            <h3>Enfants</h3>
+            <p>[À COMPLÉTER — précisions concernant les enfants.]</p>
+          </article>
+          <article class="card reveal-on-scroll">
+            <h3>Météo</h3>
+            <p>[À COMPLÉTER — conseils météo / prévoyance.]</p>
+          </article>
+          <article class="card reveal-on-scroll">
+            <h3>Contact</h3>
+            <p>[À COMPLÉTER — téléphone ou e-mail de contact.]</p>
+          </article>
+        </div>
+      </div>
+    </section>
 
-    <p class="text">
-        Nous vous donnons rendez-vous dans un cadre provençal
-        entouré de nature, d'oliviers et de lavande.
-    </p>
+    <!-- ============ Dress code ============ -->
+    <section class="section section--tinted" id="tenue">
+      <div class="container container--narrow">
+        <p class="section__eyebrow">Dress code</p>
+        <h2 class="section__title">Chic &amp; champêtre</h2>
+        <p class="section__subtitle">Une tenue élégante et estivale, inspirée par les couleurs et la douceur de la Provence.</p>
+        <ul class="palette">
+          <li class="palette__item"><span class="palette__swatch" style="--swatch:#F5F0E4"></span>Crème</li>
+          <li class="palette__item"><span class="palette__swatch" style="--swatch:#DCCBB0"></span>Beige</li>
+          <li class="palette__item"><span class="palette__swatch" style="--swatch:#9CAF94"></span>Vert sauge</li>
+          <li class="palette__item"><span class="palette__swatch" style="--swatch:#BDB1CE"></span>Lavande</li>
+          <li class="palette__item"><span class="palette__swatch" style="--swatch:#C98F76"></span>Terracotta</li>
+        </ul>
+      </div>
+    </section>
 
-    <a class="button" href="#" target="_blank">
-        Voir l'itinéraire
-    </a>
+    <!-- ============ Partage de photos ============ -->
+    <section class="section" id="photos">
+      <div class="container container--narrow">
+        <p class="section__eyebrow">📸 Partagez vos photos</p>
+        <h2 class="section__title">Vos plus belles images</h2>
+        <p class="section__subtitle">Vous allez certainement prendre de magnifiques photos pendant notre mariage. Nous aimerions pouvoir les découvrir !</p>
+        <p class="section__subtitle">Ajoutez vos photos à notre album collaboratif afin que nous puissions revivre cette journée à travers vos yeux.</p>
+        <a class="btn btn--primary btn--large" href="[LIEN ALBUM PHOTO À AJOUTER]" target="_blank" rel="noopener">Partager mes photos</a>
+      </div>
+    </section>
 
-</section>
+    <!-- ============ Cagnotte ============ -->
+    <section class="section section--tinted" id="cagnotte">
+      <div class="container container--narrow">
+        <p class="section__eyebrow">🎁 Une petite attention</p>
+        <h2 class="section__title">Le plus beau des cadeaux</h2>
+        <p class="section__subtitle">Votre présence à nos côtés sera déjà le plus beau des cadeaux.</p>
+        <p class="section__subtitle">Nous n'avons pas de liste de mariage. Si vous souhaitez néanmoins nous faire un cadeau, nous préférons une participation à notre cagnotte afin de nous aider à réaliser un beau voyage après le mariage.</p>
+        <a class="btn btn--primary btn--large" href="[LIEN CAGNOTTE À AJOUTER]" target="_blank" rel="noopener">Participer à notre voyage</a>
+      </div>
+    </section>
 
+    <!-- ============ RSVP ============ -->
+    <section class="section section--rsvp" id="rsvp">
+      <div class="container container--narrow">
+        <p class="section__eyebrow section__eyebrow--light">Votre présence</p>
+        <h2 class="section__title section__title--light">Serez-vous des nôtres ?</h2>
+        <p class="section__subtitle section__subtitle--light">Nous avons hâte de partager cette journée avec vous.</p>
+        <!-- Remplacer le href par le lien Google Forms (ou autre service) de votre choix. -->
+        <a class="btn btn--light btn--large" href="[LIEN RSVP À AJOUTER]" target="_blank" rel="noopener">Confirmer ma présence</a>
+      </div>
+    </section>
 
-<section class="countdown">
+    <!-- ============ Galerie ============ -->
+    <section class="section" id="galerie">
+      <div class="container">
+        <p class="section__eyebrow">Quelques images</p>
+        <h2 class="section__title">Galerie</h2>
+        <div class="gallery">
+          <figure class="gallery__item gallery__item--wide reveal-on-scroll">
+            <img src="images/provence-01.jpg" alt="Paysage de Provence" width="1200" height="800" loading="lazy">
+          </figure>
+          <figure class="gallery__item reveal-on-scroll">
+            <img src="images/couple-02.jpg" alt="Lucie et Hadrien" width="700" height="875" loading="lazy">
+          </figure>
+          <figure class="gallery__item gallery__item--tall reveal-on-scroll">
+            <img src="images/lieu-02.jpg" alt="Le lieu du mariage" width="700" height="1050" loading="lazy">
+          </figure>
+          <figure class="gallery__item reveal-on-scroll">
+            <img src="images/provence-02.jpg" alt="Champ de lavande en Provence" width="700" height="875" loading="lazy">
+          </figure>
+        </div>
+      </div>
+    </section>
 
-    <p class="section-label">LE GRAND JOUR</p>
+    <!-- ============ FAQ ============ -->
+    <section class="section section--tinted" id="faq">
+      <div class="container container--narrow">
+        <p class="section__eyebrow">Questions fréquentes</p>
+        <h2 class="section__title">FAQ</h2>
+        <div class="faq">
+          <details class="faq__item">
+            <summary>À quelle heure devons-nous arriver ?</summary>
+            <p>[À COMPLÉTER]</p>
+          </details>
+          <details class="faq__item">
+            <summary>Y aura-t-il un parking ?</summary>
+            <p>[À COMPLÉTER]</p>
+          </details>
+          <details class="faq__item">
+            <summary>Y aura-t-il des hébergements à proximité ?</summary>
+            <p>[À COMPLÉTER]</p>
+          </details>
+          <details class="faq__item">
+            <summary>Quel est le dress code ?</summary>
+            <p>Chic &amp; champêtre : une tenue élégante et estivale, dans les tons de la Provence.</p>
+          </details>
+          <details class="faq__item">
+            <summary>Les enfants sont-ils invités ?</summary>
+            <p>[À COMPLÉTER]</p>
+          </details>
+          <details class="faq__item">
+            <summary>Que faire si j'ai une allergie alimentaire ?</summary>
+            <p>[À COMPLÉTER]</p>
+          </details>
+          <details class="faq__item">
+            <summary>Jusqu'à quand confirmer ma présence ?</summary>
+            <p>[À COMPLÉTER]</p>
+          </details>
+        </div>
+      </div>
+    </section>
 
-    <h2>J - <span id="days">---</span></h2>
+  </main>
 
-    <p>avant notre mariage</p>
+  <!-- ============ Footer ============ -->
+  <footer class="footer">
+    <svg class="olive-branch footer__branch" viewBox="0 0 120 40" aria-hidden="true" focusable="false">
+      <path d="M5 20 C 40 12, 80 12, 115 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      <ellipse cx="30" cy="14" rx="9" ry="4" transform="rotate(-18 30 14)" fill="currentColor" opacity=".55"/>
+      <ellipse cx="48" cy="24" rx="9" ry="4" transform="rotate(16 48 24)" fill="currentColor" opacity=".55"/>
+      <ellipse cx="68" cy="13" rx="9" ry="4" transform="rotate(-14 68 13)" fill="currentColor" opacity=".55"/>
+      <ellipse cx="88" cy="24" rx="9" ry="4" transform="rotate(14 88 24)" fill="currentColor" opacity=".55"/>
+    </svg>
+    <p class="footer__names">Lucie &amp; Hadrien</p>
+    <p class="footer__meta">15 mai 2027 — Provence</p>
+  </footer>
 
-</section>
-
-
-<section id="rsvp" class="rsvp">
-
-    <p class="section-label">RSVP</p>
-
-    <h2>Serez-vous des nôtres ?</h2>
-
-    <p>
-        Merci de confirmer votre présence avant le
-        <strong>1er mars 2027</strong>.
-    </p>
-
-    <a class="button button-light"
-       href="https://forms.google.com/"
-       target="_blank">
-
-        Confirmer ma présence
-
-    </a>
-
-</section>
-
-
-<footer>
-
-    <p>Hadrien & Prénom</p>
-
-    <p>15 mai 2027 · Provence</p>
-
-</footer>
-
-
-<script src="script.js"></script>
-
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+          integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+          crossorigin=""></script>
+  <script src="js/config.js"></script>
+  <script src="js/calendar.js"></script>
+  <script src="js/map.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>

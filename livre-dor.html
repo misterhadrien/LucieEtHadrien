@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notre livre d'or — Lucie &amp; Hadrien</title>
+  <meta name="description" content="Laissez un petit mot pour Lucie &amp; Hadrien à l'occasion de leur mariage le 15 mai 2027 en Provence.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Notre livre d'or — Lucie &amp; Hadrien">
+  <meta property="og:description" content="Un petit mot pour Lucie &amp; Hadrien ?">
+  <meta property="og:image" content="/images/og-image.jpg">
+  <meta property="og:url" content="https://lucie-et-hadrien.fr/livre-dor.html">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ============ Navigation ============ -->
+  <header class="nav" id="nav">
+    <a href="index.html" class="nav__brand">L&nbsp;&amp;&nbsp;H</a>
+    <nav class="nav__menu" id="nav-menu" aria-label="Navigation principale">
+      <a href="index.html">Accueil</a>
+      <a href="index.html#histoire">Notre histoire</a>
+      <a href="index.html#programme">Le programme</a>
+      <a href="index.html#lieu">Le lieu</a>
+      <a href="provence.html">La Provence</a>
+      <a href="index.html#infos">Infos pratiques</a>
+      <a href="playlist.html">Playlist</a>
+      <a href="livre-dor.html" aria-current="page">Livre d'or</a>
+      <a href="index.html#rsvp" class="nav__cta">RSVP</a>
+    </nav>
+    <button class="nav__burger" id="nav-burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav-menu">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <main>
+
+    <!-- ============ Hero ============ -->
+    <section class="page-hero">
+      <div class="page-hero__content reveal">
+        <h1>Notre livre d'or</h1>
+        <p>Un petit mot pour Lucie &amp; Hadrien ? ❤️</p>
+      </div>
+    </section>
+
+    <!-- ============ Formulaire ============ -->
+    <section class="section" id="ecrire">
+      <div class="container">
+        <p class="section__eyebrow">✉️ Exprimez-vous</p>
+        <h2 class="section__title">Laissez-nous un mot</h2>
+        <p class="section__subtitle">Votre message apparaîtra ci-dessous, visible par tous les visiteurs.</p>
+
+        <form class="form" id="guestbook-form" novalidate>
+          <div class="form__field">
+            <label for="gb-first-name">Prénom *</label>
+            <input type="text" id="gb-first-name" name="firstName" maxlength="50" autocomplete="given-name" required>
+            <p class="form__error">Merci d'indiquer votre prénom.</p>
+          </div>
+          <div class="form__field">
+            <label for="gb-last-name">Nom (facultatif)</label>
+            <input type="text" id="gb-last-name" name="lastName" maxlength="50" autocomplete="family-name">
+          </div>
+          <div class="form__field">
+            <label for="gb-message">Message *</label>
+            <textarea id="gb-message" name="message" maxlength="600" required></textarea>
+            <p class="form__error">Merci d'écrire un message (10 caractères minimum).</p>
+          </div>
+          <!-- Anti-spam : champ caché, ne pas retirer -->
+          <div class="form__hp" aria-hidden="true">
+            <label for="gb-hp">Ne pas remplir</label>
+            <input type="text" id="gb-hp" name="website" tabindex="-1" autocomplete="off">
+          </div>
+          <button type="submit" class="btn btn--primary btn--large">Laisser un petit mot</button>
+        </form>
+
+        <div class="form__notice form__notice--success" id="gb-success" role="status" hidden>
+          Merci du fond du cœur, votre mot est publié ci-dessous. ❤️
+        </div>
+        <div class="form__notice form__notice--info" id="gb-info" role="status" hidden></div>
+      </div>
+    </section>
+
+    <!-- ============ Messages ============ -->
+    <section class="section section--tinted" id="messages">
+      <div class="container">
+        <p class="section__eyebrow">Vos jolis mots</p>
+        <h2 class="section__title">Les messages</h2>
+        <div class="entries" id="guestbook-list"></div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ Footer ============ -->
+  <footer class="footer">
+    <svg class="olive-branch footer__branch" viewBox="0 0 120 40" aria-hidden="true" focusable="false">
+      <path d="M5 20 C 40 12, 80 12, 115 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      <ellipse cx="30" cy="14" rx="9" ry="4" transform="rotate(-18 30 14)" fill="currentColor" opacity=".55"/>
+      <ellipse cx="48" cy="24" rx="9" ry="4" transform="rotate(16 48 24)" fill="currentColor" opacity=".55"/>
+      <ellipse cx="68" cy="13" rx="9" ry="4" transform="rotate(-14 68 13)" fill="currentColor" opacity=".55"/>
+      <ellipse cx="88" cy="24" rx="9" ry="4" transform="rotate(14 88 24)" fill="currentColor" opacity=".55"/>
+    </svg>
+    <p class="footer__names">Lucie &amp; Hadrien</p>
+    <p class="footer__meta">15 mai 2027 — Provence</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js" defer></script>
+  <script src="js/config.js"></script>
+  <script src="js/livre-dor.js" defer></script>
+  <script src="script.js"></script>
+</body>
+</html>

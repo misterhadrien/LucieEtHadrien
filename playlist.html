@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>La playlist des mariés — Lucie &amp; Hadrien</title>
+  <meta name="description" content="Proposez la chanson que vous voulez absolument entendre au mariage de Lucie &amp; Hadrien, le 15 mai 2027 en Provence.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="La playlist des mariés — Lucie &amp; Hadrien">
+  <meta property="og:description" content="Quelle chanson voulez-vous absolument entendre le 15 mai ?">
+  <meta property="og:image" content="/images/og-image.jpg">
+  <meta property="og:url" content="https://lucie-et-hadrien.fr/playlist.html">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ============ Navigation ============ -->
+  <header class="nav" id="nav">
+    <a href="index.html" class="nav__brand">L&nbsp;&amp;&nbsp;H</a>
+    <nav class="nav__menu" id="nav-menu" aria-label="Navigation principale">
+      <a href="index.html">Accueil</a>
+      <a href="index.html#histoire">Notre histoire</a>
+      <a href="index.html#programme">Le programme</a>
+      <a href="index.html#lieu">Le lieu</a>
+      <a href="provence.html">La Provence</a>
+      <a href="index.html#infos">Infos pratiques</a>
+      <a href="playlist.html" aria-current="page">Playlist</a>
+      <a href="livre-dor.html">Livre d'or</a>
+      <a href="index.html#rsvp" class="nav__cta">RSVP</a>
+    </nav>
+    <button class="nav__burger" id="nav-burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav-menu">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <main>
+
+    <!-- ============ Hero ============ -->
+    <section class="page-hero">
+      <div class="page-hero__content reveal">
+        <h1>La playlist des mariés</h1>
+        <p>Quelle chanson voulez-vous absolument entendre le 15 mai ?</p>
+      </div>
+    </section>
+
+    <!-- ============ Formulaire ============ -->
+    <section class="section" id="proposer">
+      <div class="container">
+        <p class="section__eyebrow">🎵 À vous de jouer</p>
+        <h2 class="section__title">Proposez une chanson</h2>
+        <p class="section__subtitle">Elle pourra rythmer notre soirée du 15 mai !</p>
+
+        <form class="form" id="playlist-form" novalidate>
+          <div class="form__field">
+            <label for="pl-first-name">Prénom *</label>
+            <input type="text" id="pl-first-name" name="firstName" maxlength="50" autocomplete="given-name" required>
+            <p class="form__error">Merci d'indiquer votre prénom.</p>
+          </div>
+          <div class="form__field">
+            <label for="pl-last-name">Nom (facultatif)</label>
+            <input type="text" id="pl-last-name" name="lastName" maxlength="50" autocomplete="family-name">
+          </div>
+          <div class="form__field">
+            <label for="pl-title">Titre de la chanson *</label>
+            <input type="text" id="pl-title" name="songTitle" maxlength="120" required>
+            <p class="form__error">Merci d'indiquer le titre de la chanson.</p>
+          </div>
+          <div class="form__field">
+            <label for="pl-artist">Artiste *</label>
+            <input type="text" id="pl-artist" name="artist" maxlength="120" required>
+            <p class="form__error">Merci d'indiquer l'artiste.</p>
+          </div>
+          <div class="form__field">
+            <label for="pl-message">Message (facultatif)</label>
+            <textarea id="pl-message" name="message" maxlength="300"></textarea>
+          </div>
+          <!-- Anti-spam : champ caché, ne pas retirer -->
+          <div class="form__hp" aria-hidden="true">
+            <label for="pl-hp">Ne pas remplir</label>
+            <input type="text" id="pl-hp" name="website" tabindex="-1" autocomplete="off">
+          </div>
+          <button type="submit" class="btn btn--primary btn--large">Proposer cette chanson</button>
+        </form>
+
+        <div class="form__notice form__notice--success" id="pl-success" role="status" hidden>
+          Merci ! Votre chanson a bien été proposée. 🎶
+        </div>
+        <div class="form__notice form__notice--info" id="pl-info" role="status" hidden></div>
+      </div>
+    </section>
+
+    <!-- ============ Chansons proposées ============ -->
+    <section class="section section--tinted" id="chansons">
+      <div class="container">
+        <p class="section__eyebrow">La piste de danse se prépare</p>
+        <h2 class="section__title">Les chansons proposées</h2>
+        <div class="entries" id="playlist-list"></div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ Footer ============ -->
+  <footer class="footer">
+    <svg class="olive-branch footer__branch" viewBox="0 0 120 40" aria-hidden="true" focusable="false">
+      <path d="M5 20 C 40 12, 80 12, 115 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      <ellipse cx="30" cy="14" rx="9" ry="4" transform="rotate(-18 30 14)" fill="currentColor" opacity=".55"/>
+      <ellipse cx="48" cy="24" rx="9" ry="4" transform="rotate(16 48 24)" fill="currentColor" opacity=".55"/>
+      <ellipse cx="68" cy="13" rx="9" ry="4" transform="rotate(-14 68 13)" fill="currentColor" opacity=".55"/>
+      <ellipse cx="88" cy="24" rx="9" ry="4" transform="rotate(14 88 24)" fill="currentColor" opacity=".55"/>
+    </svg>
+    <p class="footer__names">Lucie &amp; Hadrien</p>
+    <p class="footer__meta">15 mai 2027 — Provence</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js" defer></script>
+  <script src="js/config.js"></script>
+  <script src="js/playlist.js" defer></script>
+  <script src="script.js"></script>
+</body>
+</html>
