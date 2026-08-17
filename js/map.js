@@ -14,8 +14,8 @@
   var CATEGORIES = {
     mariage:     { label: "📍 Lieu du mariage", color: "#7D8B6F" },
     hotel:       { label: "🏨 Hôtels",           color: "#C98F76" },
-    gite:        { label: "🏡 Gîtes", color: "#9CAF94" },
-    camping:     { label: "🏕️ Campings", color: "#9CAF94" },
+    gite:        { label: "🏡 Gîtes / chambres d'hôtes", color: "#9CAF94" },
+    parking:     { label: "🚗 Parkings",         color: "#7A6E61" },
     gare:        { label: "🚉 Gares",            color: "#BDB1CE" },
     aeroport:    { label: "✈️ Aéroports",        color: "#8E9AAF" },
     restaurant:  { label: "🍽️ Restaurants",     color: "#C08552" },
@@ -33,48 +33,14 @@
     ? [venue.lat, venue.lng]
     : [cfg.fallbackCenter.lat, cfg.fallbackCenter.lng];
 
- /* ---------- Création de la carte ---------- */
-  var map = L.map(mapEl, {
-    scrollWheelZoom: false
-  }).setView(center, cfg.zoom);
+  var map = L.map(mapEl, { scrollWheelZoom: false }).setView(center, cfg.zoom);
+  map.on("click", function () { map.scrollWheelZoom.enable(); });
+  map.on("mouseout", function () { map.scrollWheelZoom.disable(); });
 
-  /* ---------- Fond OpenStreetMap ---------- */
   L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
     maxZoom: 18,
-    attribution:
-      '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
   }).addTo(map);
-
-  /* ---------- Correction automatique de la taille ---------- */
-  function refreshMapSize() {
-    map.invalidateSize();
-  }
-
-  /* Après le rendu initial */
-  setTimeout(refreshMapSize, 100);
-  setTimeout(refreshMapSize, 500);
-  setTimeout(refreshMapSize, 1000);
-
-  /* Lors d'un changement de taille de fenêtre */
-  window.addEventListener("resize", refreshMapSize);
-
-  /* Si la taille du conteneur change */
-  if (typeof ResizeObserver !== "undefined") {
-    var mapResizeObserver = new ResizeObserver(function () {
-      map.invalidateSize();
-    });
-
-    mapResizeObserver.observe(mapEl);
-  }
-
-  /* ---------- Zoom à la souris ---------- */
-  map.on("click", function () {
-    map.scrollWheelZoom.enable();
-  });
-
-  map.on("mouseout", function () {
-    map.scrollWheelZoom.disable();
-  });
 
   /* ---------- Distance (haversine, km) ---------- */
   function distanceKm(a, b) {
