@@ -15,7 +15,7 @@
     mariage:     { label: "📍 Lieu du mariage", color: "#7D8B6F" },
     hotel:       { label: "🏨 Hôtels",           color: "#C98F76" },
     gite:        { label: "🏡 Gîtes", color: "#9CAF94" },
-    parking:     { label: "🚗 Parkings",         color: "#7A6E61" },
+    camping:     { label: "🏕️ Campings", color: "#9CAF94" },
     gare:        { label: "🚉 Gares",            color: "#BDB1CE" },
     aeroport:    { label: "✈️ Aéroports",        color: "#8E9AAF" },
     restaurant:  { label: "🍽️ Restaurants",     color: "#C08552" },
