@@ -26,7 +26,7 @@ var SITE_CONFIG = {
   map: {
     // Coordonnées PROVISOIRES du lieu de mariage — À REMPLACER par les vraies.
     // format : { lat: 43.5297, lng: 5.4474 }
-    venueCoords: { lat: 43.662742, lng: 5.184049 },
+    venueCoords: { lat: 43.5297, lng: 5.4474 },
     // Centre de repli tant que les coordonnées du lieu ne sont pas connues
     // (zone Provence) :
     fallbackCenter: { lat: 43.5297, lng: 5.4474 },
@@ -78,8 +78,8 @@ var SITE_CONFIG = {
       address: "D22, 13116 Vernègues",
       description: "Le lieu du mariage."
     },
-    { name: "[Hôtel à ajouter]", category: "hotel", coords: [43.5297, 5.4474], address: "[À COMPLÉTER]", description: "" },
-    { name: "[Gîte / chambre d'hôtes à ajouter]", category: "gite", coords: [43.5287, 5.4474], address: "[À COMPLÉTER]", description: "" },
+    { name: "[Hôtel à ajouter]", category: "hotel", coords: null, address: "[À COMPLÉTER]", description: "" },
+    { name: "[Gîte / chambre d'hôtes à ajouter]", category: "gite", coords: null, address: "[À COMPLÉTER]", description: "" },
     { name: "[Parking à ajouter]", category: "parking", coords: null, address: "[À COMPLÉTER]", description: "" },
     { name: "[Gare à ajouter]", category: "gare", coords: null, address: "[À COMPLÉTER]", description: "" },
     { name: "[Aéroport à ajouter]", category: "aeroport", coords: null, address: "[À COMPLÉTER]", description: "" },
