@@ -755,6 +755,14 @@ h1, h2, h3 {
 
 .map-marker-emoji--venue span {
   font-size: 38px;
+  background: rgba(250, 246, 238, 0.9);
+  border-radius: 50%;
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
 }
 
 #map { height: clamp(380px, 60vw, 560px); width: 100%; }
