@@ -56,20 +56,39 @@ var CATEGORIES = {
   var layers = {}; // catégorie -> LayerGroup
   var venueLatLng = venue ? [venue.lat, venue.lng] : null;
 
-  SITE_CONFIG.places.forEach(function (place) {
-    var cat = CATEGORIES[place.category];
-    if (!cat || !place.coords) return; // lieu sans coordonnées : non affiché
-
-    var latLng = [place.coords[0], place.coords[1]];
-    var isVenue = place.category === "mariage";
-
-    var marker = L.circleMarker(latLng, {
-      radius: isVenue ? 11 : 8,
-      color: "#FAF6EE",
-      weight: 2,
-      fillColor: cat.color,
-      fillOpacity: 1
-    });
+   SITE_CONFIG.places.forEach(function (place) {
+     var cat = CATEGORIES[place.category];
+     if (!cat || !place.coords) return;
+   
+     var latLng = [place.coords[0], place.coords[1]];
+     var isVenue = place.category === "mariage";
+   
+     if (!layers[place.category]) {
+       layers[place.category] = L.layerGroup().addTo(map);
+     }
+   
+     // Halo du lieu du mariage
+     if (isVenue) {
+       var halo = L.circleMarker(latLng, {
+         radius: 21,
+         color: cat.color,
+         weight: 2,
+         fillColor: cat.color,
+         fillOpacity: 0.15,
+         opacity: 0.7
+       });
+   
+       layers[place.category].addLayer(halo);
+     }
+   
+     // Marqueur principal
+     var marker = L.circleMarker(latLng, {
+       radius: isVenue ? 13 : 7,
+       color: "#FFFFFF",
+       weight: isVenue ? 4 : 2,
+       fillColor: cat.color,
+       fillOpacity: 1
+     });
 
     var distanceLine = "";
     if (!isVenue && venueLatLng) {
