@@ -18,8 +18,6 @@
     gare:        { label: "🚉 Gares",            color: "#BDB1CE" },
     aeroport:    { label: "✈️ Aéroports",        color: "#8E9AAF" },
     restaurant:  { label: "🍽️ Restaurants",     color: "#C08552" },
-    cafe:        { label: "☕ Cafés", color: "#D6A75C" },
-    services:    { label: "🏥 Services utiles",  color: "#A0857A" },
     tourisme:    { label: "🌿 Lieux touristiques", color: "#6A7A5E" }
   };
 
