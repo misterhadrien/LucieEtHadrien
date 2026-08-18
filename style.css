@@ -778,7 +778,10 @@ h1, h2, h3 {
   background: var(--color-cream);
 }
 
-#map { height: clamp(380px, 60vw, 560px); width: 100%; }
+#map {
+  height: clamp(420px, 65vh, 560px);
+  width: 100%;
+}
 
 .map-popup { font-family: var(--font-sans); color: var(--color-brown); }
 .map-popup h3 { font-family: var(--font-serif); font-size: 1.15rem; margin-bottom: 0.2rem; }
