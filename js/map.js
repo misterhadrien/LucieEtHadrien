@@ -13,12 +13,11 @@
   /* ---------- Catégories ---------- */
 var CATEGORIES = {
   mariage:  { label: "Lieu du mariage",       icon: "📍", color: "#8B5E3C" },
-  logement: { label: "Hébergement",              icon: "⛺", color: "#B97962" },
-  gare:     { label: "Gare",                  icon: "🚉", color: "#7B8794" },
+  logement: { label: "Hébergements",              icon: "⛺", color: "#B97962" },
+  gare:     { label: "Gares",                  icon: "🚉", color: "#7B8794" },
   aeroport: { label: "Aéroport",              icon: "✈️", color: "#5F7892" },
-  shopping: { label: "Shopping",              icon: "👛", color: "#B68A5A" },
   maison:   { label: "Chez nous",            icon: "🏠", color: "#A66A45" },
-  tourisme: { label: "Lieux touristiques",    icon: "🌿", color: "#657A52" }
+  tourisme: { label: "Lieux à découvrir",    icon: "🌿", color: "#657A52" }
 };
 
   var cfg = SITE_CONFIG.map;
