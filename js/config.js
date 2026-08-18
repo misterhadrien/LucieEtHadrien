@@ -62,19 +62,18 @@ var SITE_CONFIG = {
   // "coords" : null tant que les coordonnées réelles ne sont pas connues
   // (le lieu n'est alors pas affiché sur la carte).
   places: [
-    { name: "Prieuré de Badasset", category: "mariage", coords: [43.662572915660775, 5.184551388295699], address: "D22, 13116 Vernègues", description: "Le lieu du mariage." },
-    { name: "Village Pont Royal en Provence Pierre & Vacances", category: "hebergement", coords: [43.70948752142142, 5.222498364709028], address: "Domaine et Golf de Pont-Royal, 13370 Mallemort", description: "À 10 minutes en voiture du lieu du mariage." },
-    { name: "Camping Lou Paradou", category: "hebergement", coords: [43.638668268187786, 5.275293288849929], address: "151 Chemin des Ponnes , Avenue d'Aix, 13410 Lambesc", description: "À 10 minutes en voiture du lieu du mariage." },
-    { name: "Gare Salon-de-Provence", category: "gare", coords: [43.639353356081365, 5.089926801161895], address: "13300 Salon-de-Provence", description: "Gare la plus proche." },
+    { name: "Prieuré de Badasset", category: "mariage", coords: [43.662572915660775, 5.184551388295699], address: "D22, 13116 Vernègues", description: "" },
+    { name: "Village Pont Royal en Provence Pierre & Vacances", category: "hebergement", coords: [43.70948752142142, 5.222498364709028], address: "Domaine et Golf de Pont-Royal, 13370 Mallemort", description: "" },
+    { name: "Camping Lou Paradou", category: "hebergement", coords: [43.638668268187786, 5.275293288849929], address: "151 Chemin des Ponnes , Avenue d'Aix, 13410 Lambesc", description: "" },
     { name: "Aix-en-Provence TGV", category: "gare", coords: [43.45528397038415, 5.317224067953765], address: "13290 Aix-en-Provence", description: "Gare TGV la plus proche." },
     { name: "Aéroport Marseille Provence", category: "aeroport", coords: [43.43848360548113, 5.215037835876824], address: "Marignane", description: "Aéroport le plus proche." },
     { name: "Parc Animalier de la Barben", category: "tourisme", coords: [43.62402386890663, 5.2095669809005205], address: "Rte du Château, 13330 La Barben,", description: "" },
-    { name: "Le Roy René Musée du Calisson", category: "tourisme", coords: [43.581987148592695, 5.3803605104489405], address: "Quartier la Calade, 5380 Route d'Avignon, D7N, 13100 Aix-en-Provence", description: "Musée gratuit et magasin d'usine." },
+    { name: "Le Roy René Musée du Calisson", category: "tourisme", coords: [43.581987148592695, 5.3803605104489405], address: "5380 Route d'Avignon, D7N, 13100 Aix-en-Provence", description: "Musée gratuit et magasin d'usine." },
     { name: "Savonnerie Marius Fabre", category: "tourisme", coords: [43.63780742870377, 5.090869367407603], address: "148 Av. Paul Bourret, 13300 Salon-de-Provence", description: "Visite gratuite sur réservation et magasin d'usine." },
-    { name: "Miramas le vieux", category: "tourisme", coords: [43.5632802799067, 5.024749044443601], address: "Rue Frédéric Mistral, 13140 Miramas", description: "Petit village provençal sympa à visiter et glacier réputé Le Quillé." },
+    { name: "Miramas le vieux", category: "tourisme", coords: [43.5632802799067, 5.024749044443601], address: "Rue Frédéric Mistral, 13140 Miramas", description: "Petit village provençal et glacier réputé Le Quillé." },
     { name: "Les Baux-de-Provence", category: "tourisme", coords: [43.74487537186587, 4.794378331451952], address: "13520 Les Baux-de-Provence", description: "Village médiéval provençal en hauteur, château et carrière des lumières à visiter." },
     { name: "L'Isle-sur-la-Sorgue", category: "tourisme", coords: [43.917552484737605, 5.052320689062531], address: "84800 L'Isle-sur-la-Sorgue", description: "Village provençal." },
-    { name: "Village des marques", category: "shopping", coords: [43.59384299966176, 4.993471894392565], address: "6 Bd d'Espagne, 13140 Miramas", description: "McArthurGlen Provence - Village de Marques" },
+    { name: "Village des marques", category: "tourisme", coords: [43.59384299966176, 4.993471894392565], address: "6 Bd d'Espagne, 13140 Miramas", description: "McArthurGlen Provence - Village de Marques" },
      { name: "Chez nous", category: "maison", coords: [43.23521248422839, 5.402934640955494], address: "94 Av de la Jarre, 13009 Marseille", description: "" }
   ],
 
