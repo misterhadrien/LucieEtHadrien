@@ -71,13 +71,7 @@ var SITE_CONFIG = {
   // "coords" : null tant que les coordonnées réelles ne sont pas connues
   // (le lieu n'est alors pas affiché sur la carte).
   places: [
-    {
-      name: "Prieuré de Badasset",
-      category: "mariage",
-      coords: [43.662742, 5.184049], // [À COMPLÉTER] ex. : [43.5297, 5.4474]
-      address: "D22, 13116 Vernègues",
-      description: "Le lieu du mariage."
-    },
+    { name: "Prieuré de Badasset", category: "mariage", coords: [43.662572915660775, 5.184551388295699], address: "D22, 13116 Vernègues", description: "Le lieu du mariage." },
     { name: "[Hôtel à ajouter]", category: "hotel", coords: null, address: "[À COMPLÉTER]", description: "" },
     { name: "[Gîte / chambre d'hôtes à ajouter]", category: "gite", coords: null, address: "[À COMPLÉTER]", description: "" },
     { name: "[Parking à ajouter]", category: "parking", coords: null, address: "[À COMPLÉTER]", description: "" },
