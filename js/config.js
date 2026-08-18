@@ -30,7 +30,7 @@ var SITE_CONFIG = {
     // Centre de repli tant que les coordonnées du lieu ne sont pas connues
     // (zone Provence) :
     fallbackCenter: { lat: 43.662572915660775, lng: 5.184551388295699 },
-    zoom: 12
+    zoom: 9
   },
 
   // ----- Hébergements affichés sur la page d'accueil -----
@@ -78,10 +78,7 @@ var SITE_CONFIG = {
     { name: "Aix-en-Provence TGV", category: "gare", coords: [43.45528397038415, 5.317224067953765], address: "13290 Aix-en-Provence, France", description: "Gare TGV la plus proche du lieu du mariage." },
     { name: "Aéroport Marseille Provence", category: "aeroport", coords: [43.43848360548113, 5.215037835876824], address: "Marignane, France", description: "Aéroport le plus proche du lieu du mariage." },
     { name: "[Restaurant à ajouter]", category: "restaurant", coords: null, address: "[À COMPLÉTER]", description: "" },
-    { name: "[Café / boulangerie à ajouter]", category: "cafe", coords: null, address: "[À COMPLÉTER]", description: "" },
-    { name: "[Supermarché à ajouter]", category: "supermarche", coords: null, address: "[À COMPLÉTER]", description: "" },
-    { name: "[Service utile à ajouter]", category: "services", coords: null, address: "[À COMPLÉTER]", description: "" },
-    { name: "[Lieu touristique à ajouter]", category: "tourisme", coords: null, address: "[À COMPLÉTER]", description: "" }
+    { name: "Parc Animalier de la Barben", category: "tourisme", coords: [43.62402386890663, 5.2095669809005205], address: "Rte du Château, 13330 La Barben, France", description: "" }
   ],
 
   // ----- Supabase (playlist & livre d'or) -----
