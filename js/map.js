@@ -13,8 +13,7 @@
   /* ---------- Catégories ---------- */
 var CATEGORIES = {
   mariage:  { label: "Lieu du mariage",       icon: "📍", color: "#8B5E3C" },
-  logement: { label: "Logement",              icon: "🏨", color: "#B97962" },
-  camping:  { label: "Camping",               icon: "🏕️", color: "#7D9A6A" },
+  logement: { label: "Hébergement",              icon: "⛺", color: "#B97962" },
   gare:     { label: "Gare",                  icon: "🚉", color: "#7B8794" },
   aeroport: { label: "Aéroport",              icon: "✈️", color: "#5F7892" },
   shopping: { label: "Shopping",              icon: "👛", color: "#B68A5A" },
