@@ -94,7 +94,7 @@
       <div class="container container--narrow">
         <p class="section__eyebrow">Le grand jour</p>
         <h2 class="section__title">15 MAI 2027</h2>
-        <p class="section__subtitle">Cérémonie à 14h30, en Provence.</p>
+        <p class="section__subtitle">Cérémonie à 14h00, en Provence.</p>
         <div class="countdown" role="timer" aria-label="Compte à rebours jusqu'au mariage">
           <div class="countdown__unit"><span class="countdown__value" id="cd-days">—</span><span class="countdown__label">Jours</span></div>
           <div class="countdown__unit"><span class="countdown__value" id="cd-hours">—</span><span class="countdown__label">Heures</span></div>
@@ -102,8 +102,8 @@
           <div class="countdown__unit"><span class="countdown__value" id="cd-seconds">—</span><span class="countdown__label">Secondes</span></div>
         </div>
         <div class="calendar-actions">
-          <a class="btn btn--primary" id="btn-google-calendar" href="#" target="_blank" rel="noopener" aria-label="Ajouter le mariage à Google Calendar">Google&nbsp;Calendar</a>
-          <a class="btn btn--primary" href="calendar.ics" download aria-label="Télécharger le fichier pour Apple Calendar ou Outlook">📅 Ajouter le mariage à mon calendrier</a>
+          <a class="btn btn--primary" id="btn-google-calendar" href="#" target="_blank" rel="noopener" aria-label="Ajouter le mariage à Google Calendar">📅 Ajouter à Google&nbsp;Calendar</a>
+          <a class="btn btn--primary" href="calendar.ics" download aria-label="Télécharger le fichier pour Apple Calendar ou Outlook">📅 Ajouter à mon calendrier</a>
         </div>
       </div>
     </section>
@@ -115,31 +115,38 @@
         <h2 class="section__title">Le programme</h2>
         <ol class="timeline">
           <li class="timeline__item reveal-on-scroll">
-            <span class="timeline__time">14h30</span>
+            <span class="timeline__time">14h00</span>
             <div class="timeline__body">
-              <h3>Cérémonie laïque</h3>
-              <p>[À COMPLÉTER — lieu et détails de la cérémonie.]</p>
+              <h3>Mariage à la mairie</h3>
+              <p>Mairie de La Barben</p>
             </div>
           </li>
           <li class="timeline__item reveal-on-scroll">
             <span class="timeline__time">16h00</span>
             <div class="timeline__body">
-              <h3>Vin d'honneur</h3>
-              <p>[À COMPLÉTER — détails du vin d'honneur.]</p>
+              <h3>Cérémonie laïque</h3>
+              <p>Rafraîchissement puis cérémonie laïque sur le lieu de mariage.</p>
             </div>
           </li>
           <li class="timeline__item reveal-on-scroll">
-            <span class="timeline__time">19h30</span>
+            <span class="timeline__time">18h00</span>
+            <div class="timeline__body">
+              <h3>Cocktail</h3>
+              <p>Apéritif accompagné de pièces cocktails</p>
+            </div>
+          </li>
+          <li class="timeline__item reveal-on-scroll">
+            <span class="timeline__time">21h00</span>
             <div class="timeline__body">
               <h3>Dîner</h3>
-              <p>[À COMPLÉTER — détails du dîner.]</p>
+              <p>Repas sur le lieu</p>
             </div>
           </li>
           <li class="timeline__item reveal-on-scroll">
             <span class="timeline__time">23h00</span>
             <div class="timeline__body">
               <h3>Soirée</h3>
-              <p>[À COMPLÉTER — détails de la soirée.]</p>
+              <p>Soirée sur le lieu</p>
             </div>
           </li>
         </ol>
@@ -154,16 +161,25 @@
         <p class="section__subtitle">Un écrin au cœur de la Provence</p>
         <div class="venue">
           <div class="venue__media reveal-on-scroll">
-            <img src="images/lieu-01.jpg" alt="Prieuré de Badasset" width="900" height="700" loading="lazy">
+            <img src="https://cdn0.mariages.net/vendor/7793/3_2/960/jpeg/img-3913_3_197793-172753610888168.jpeg" alt="Prieuré de Badasset" width="900" height="700" loading="lazy">
           </div>
           <div class="venue__info reveal-on-scroll">
-            <h3 class="venue__name">Prieuré de Badasset</h3>
-            <p class="venue__address">[Adresse du lieu]</p>
+            <h3 class="venue__name">Le Prieuré de Badasset</h3>
+            <p class="venue__address">D22, 13116 Vernègues</p>
             <!-- Intégration carte à venir : remplacer ce bloc par l'iframe Google Maps. -->
             <div class="venue__map" aria-hidden="true">
-              <p>[Carte Google Maps à intégrer]</p>
+              <iframe
+                src="https://www.google.com/maps?q=43.662441,5.183736&z=17&output=embed"
+                width="100%"
+                height="350"
+                style="border:0;"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                title="Le Prieuré de Badasset">
+              </iframe>
             </div>
-            <a class="btn btn--primary" href="[LIEN ITINÉRAIRE À AJOUTER]" target="_blank" rel="noopener">Voir l'itinéraire</a>
+            <a class="btn btn--primary" href="https://maps.app.goo.gl/a9PCoeWqMvTU5f1h7" target="_blank" rel="noopener">Voir l'itinéraire</a>
           </div>
         </div>
       </div>
@@ -174,7 +190,7 @@
       <div class="container">
         <p class="section__eyebrow">Préparer votre séjour</p>
         <h2 class="section__title">Tout savoir autour du lieu</h2>
-        <p class="section__subtitle">Tout ce dont vous avez besoin pour préparer votre séjour</p>
+        <p class="section__subtitle">Des lieux et bonnes adresses sélectionnés et testés par nos soins, que nous vous recommandons pour votre séjour en Provence.</p>
         <div class="map-legend" id="map-legend" aria-label="Légende de la carte"></div>
         <div class="map-wrap">
           <div id="map" role="application" aria-label="Carte interactive des lieux autour du lieu du mariage"></div>
@@ -187,9 +203,9 @@
       <div class="container">
         <p class="section__eyebrow">Séjourner près de nous</p>
         <h2 class="section__title">Où dormir ?</h2>
-        <p class="section__subtitle">Quelques adresses que nous vous recommandons pour votre séjour</p>
+        <p class="section__subtitle">Voici les adresses que nous vous recommandons pour dormir au plus près du lieu de notre mariage.</p>
         <div class="cards cards--stay" id="stay-list"></div>
-        <a class="btn btn--primary" href="#hebergements">Voir tous les hébergements</a>
+        <!-- <a class="btn btn--primary" href="#hebergements">Voir tous les hébergements</a> -->
       </div>
     </section>
 
