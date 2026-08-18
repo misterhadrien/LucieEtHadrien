@@ -30,7 +30,7 @@ var SITE_CONFIG = {
     // Centre de repli tant que les coordonnées du lieu ne sont pas connues
     // (zone Provence) :
     fallbackCenter: { lat: 43.662572915660775, lng: 5.184551388295699 },
-    zoom: 8
+    zoom: 9
   },
 
   // ----- Hébergements affichés sur la page d'accueil -----
