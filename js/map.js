@@ -11,15 +11,16 @@
   if (!mapEl || typeof L === "undefined") return;
 
   /* ---------- Catégories ---------- */
-  var CATEGORIES = {
-    mariage:     { label: "📍 Lieu du mariage", color: "#7D8B6F" },
-    hotel:       { label: "🏨 Hôtels",           color: "#C98F76" },
-    camping:     { label: "🏕️ Campings", color: "#9CAF94" },
-    gare:        { label: "🚉 Gares",            color: "#BDB1CE" },
-    aeroport:    { label: "✈️ Aéroports",        color: "#8E9AAF" },
-    shopping:  { label: "👛 Shopping",     color: "#C08552" },
-    tourisme:    { label: "🌿 Lieux touristiques", color: "#6A7A5E" }
-  };
+var CATEGORIES = {
+  mariage:  { label: "📍 Lieu du mariage",       color: "#8B5E3C" }, // Terre cuite foncée
+  logement: { label: "🏨 Logement",              color: "#B97962" }, // Terracotta
+  camping:  { label: "🏕️ Camping",              color: "#7D9A6A" }, // Vert sauge
+  gare:     { label: "🚉 Gare",                  color: "#7B8794" }, // Gris bleuté
+  aeroport: { label: "✈️ Aéroport",              color: "#5F7892" }, // Bleu ardoise
+  shopping: { label: "👛 Shopping",              color: "#B68A5A" }, // Ocre
+  maison:   { label: "🏠 Chez nous",             color: "#A66A45" }, // Brun terracotta
+  tourisme: { label: "🌿 Lieux touristiques",    color: "#657A52" }  // Vert olive
+};
 
   var cfg = SITE_CONFIG.map;
   var venue = cfg.venueCoords || null;
