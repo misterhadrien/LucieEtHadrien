@@ -78,7 +78,8 @@ var SITE_CONFIG = {
     { name: "Aix-en-Provence TGV", category: "gare", coords: [43.45528397038415, 5.317224067953765], address: "13290 Aix-en-Provence, France", description: "Gare TGV la plus proche du lieu du mariage." },
     { name: "Aéroport Marseille Provence", category: "aeroport", coords: [43.43848360548113, 5.215037835876824], address: "Marignane, France", description: "Aéroport le plus proche du lieu du mariage." },
     { name: "Parc Animalier de la Barben", category: "tourisme", coords: [43.62402386890663, 5.2095669809005205], address: "Rte du Château, 13330 La Barben, France", description: "" },
-    { name: "Le Roy René Musée du Calisson", category: "tourisme", coords: [43.581987148592695, 5.3803605104489405], address: "Quartier la Calade, 5380 Route d'Avignon, D7N, 13100 Aix-en-Provence, France", description: "Boutique et musée du calisson" }
+    { name: "Le Roy René Musée du Calisson", category: "tourisme", coords: [43.581987148592695, 5.3803605104489405], address: "Quartier la Calade, 5380 Route d'Avignon, D7N, 13100 Aix-en-Provence, France", description: "Musée gratuit et magasin d'usine" },
+    { name: "Savonnerie Marius Fabre", category: "tourisme", coords: [43.63780742870377, 5.090869367407603], address: "148 Av. Paul Bourret, 13300 Salon-de-Provence, France", description: "Visite gratuite sur réservation et magasin d'usine" }
   ],
 
   // ----- Supabase (playlist & livre d'or) -----
