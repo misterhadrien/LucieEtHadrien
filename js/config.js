@@ -74,12 +74,13 @@ var SITE_CONFIG = {
     { name: "Prieuré de Badasset", category: "mariage", coords: [43.662572915660775, 5.184551388295699], address: "D22, 13116 Vernègues", description: "Le lieu du mariage." },
     { name: "Village Pont Royal en Provence Pierre & Vacances", category: "hotel", coords: [43.70948752142142, 5.222498364709028], address: "Domaine et Golf de Pont-Royal, 13370 Mallemort, France", description: "À 10 minutes en voiture du lieu du mariage." },
     { name: "Camping Lou Paradou", category: "camping", coords: [43.638668268187786, 5.275293288849929], address: "151 Chemin des Ponnes , Avenue d'Aix, 13410 Lambesc, France", description: "À 10 minutes en voiture du lieu du mariage." },
-    { name: "Gare Salon-de-Provence", category: "gare", coords: [43.639353356081365, 5.089926801161895], address: "13300 Salon-de-Provence, France", description: "Gare la plus proche du lieu du mariage (pas de TGV)." },
-    { name: "Aix-en-Provence TGV", category: "gare", coords: [43.45528397038415, 5.317224067953765], address: "13290 Aix-en-Provence, France", description: "Gare TGV la plus proche du lieu du mariage." },
-    { name: "Aéroport Marseille Provence", category: "aeroport", coords: [43.43848360548113, 5.215037835876824], address: "Marignane, France", description: "Aéroport le plus proche du lieu du mariage." },
+    { name: "Gare Salon-de-Provence", category: "gare", coords: [43.639353356081365, 5.089926801161895], address: "13300 Salon-de-Provence, France", description: "Gare la plus proche." },
+    { name: "Aix-en-Provence TGV", category: "gare", coords: [43.45528397038415, 5.317224067953765], address: "13290 Aix-en-Provence, France", description: "Gare TGV la plus proche." },
+    { name: "Aéroport Marseille Provence", category: "aeroport", coords: [43.43848360548113, 5.215037835876824], address: "Marignane, France", description: "Aéroport le plus proche." },
     { name: "Parc Animalier de la Barben", category: "tourisme", coords: [43.62402386890663, 5.2095669809005205], address: "Rte du Château, 13330 La Barben, France", description: "" },
     { name: "Le Roy René Musée du Calisson", category: "tourisme", coords: [43.581987148592695, 5.3803605104489405], address: "Quartier la Calade, 5380 Route d'Avignon, D7N, 13100 Aix-en-Provence, France", description: "Musée gratuit et magasin d'usine" },
-    { name: "Savonnerie Marius Fabre", category: "tourisme", coords: [43.63780742870377, 5.090869367407603], address: "148 Av. Paul Bourret, 13300 Salon-de-Provence, France", description: "Visite gratuite sur réservation et magasin d'usine" }
+    { name: "Savonnerie Marius Fabre", category: "tourisme", coords: [43.63780742870377, 5.090869367407603], address: "148 Av. Paul Bourret, 13300 Salon-de-Provence, France", description: "Visite gratuite sur réservation et magasin d'usine" },
+    { name: "Miramas le vieux", category: "tourisme", coords: [43.5632802799067, 5.024749044443601], address: "Rue Frédéric Mistral, 13140 Miramas, France", description: "Petit village provençal sympa à visiter et glacier réputé Le Quillé" }
   ],
 
   // ----- Supabase (playlist & livre d'or) -----
