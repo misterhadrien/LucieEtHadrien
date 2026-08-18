@@ -47,7 +47,7 @@ var SITE_CONFIG = {
     },
     {
       name: "[Hébergement à ajouter]",
-      type: "🏡 Chambre d'hôtes",
+      type: "🏕️ Camping",
       image: "images/hebergement-02.jpg",
       distance: "[À COMPLÉTER]",
       price: "[À COMPLÉTER]",
@@ -73,14 +73,12 @@ var SITE_CONFIG = {
   places: [
     { name: "Prieuré de Badasset", category: "mariage", coords: [43.662572915660775, 5.184551388295699], address: "D22, 13116 Vernègues", description: "Le lieu du mariage." },
     { name: "[Hôtel à ajouter]", category: "hotel", coords: null, address: "[À COMPLÉTER]", description: "" },
-    { name: "[Gîte / chambre d'hôtes à ajouter]", category: "gite", coords: null, address: "[À COMPLÉTER]", description: "" },
-    { name: "[Parking à ajouter]", category: "parking", coords: null, address: "[À COMPLÉTER]", description: "" },
+    { name: "[Gîte / chambre d'hôtes à ajouter]", category: "camping", coords: null, address: "[À COMPLÉTER]", description: "" },
     { name: "[Gare à ajouter]", category: "gare", coords: null, address: "[À COMPLÉTER]", description: "" },
     { name: "[Aéroport à ajouter]", category: "aeroport", coords: null, address: "[À COMPLÉTER]", description: "" },
     { name: "[Restaurant à ajouter]", category: "restaurant", coords: null, address: "[À COMPLÉTER]", description: "" },
     { name: "[Café / boulangerie à ajouter]", category: "cafe", coords: null, address: "[À COMPLÉTER]", description: "" },
     { name: "[Supermarché à ajouter]", category: "supermarche", coords: null, address: "[À COMPLÉTER]", description: "" },
-    { name: "[Pharmacie à ajouter]", category: "pharmacie", coords: null, address: "[À COMPLÉTER]", description: "" },
     { name: "[Service utile à ajouter]", category: "services", coords: null, address: "[À COMPLÉTER]", description: "" },
     { name: "[Lieu touristique à ajouter]", category: "tourisme", coords: null, address: "[À COMPLÉTER]", description: "" }
   ],
