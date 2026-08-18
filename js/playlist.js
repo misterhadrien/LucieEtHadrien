@@ -140,7 +140,7 @@
     }
 
     if (!configured) {
-      showInfo("Le service en ligne n'est pas encore connecté (voir js/config.js). Votre proposition n'a pas pu être enregistrée.");
+      showInfo("Erreur de connexion à la base de données. Votre proposition n'a pas pu être enregistrée.");
       return;
     }
 
