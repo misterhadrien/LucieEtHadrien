@@ -33,10 +33,10 @@ var CATEGORIES = {
   map.on("click", function () { map.scrollWheelZoom.enable(); });
   map.on("mouseout", function () { map.scrollWheelZoom.disable(); });
 
-  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-    maxZoom: 18,
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-  }).addTo(map);
+   L.tileLayer("https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png", {
+     maxZoom: 20,
+     attribution: '&copy; OpenStreetMap contributors &copy; CARTO'
+   }).addTo(map);
 
   /* ---------- Distance (haversine, km) ---------- */
   function distanceKm(a, b) {
