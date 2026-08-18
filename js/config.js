@@ -74,7 +74,8 @@ var SITE_CONFIG = {
     { name: "Miramas le vieux", category: "tourisme", coords: [43.5632802799067, 5.024749044443601], address: "Rue Frédéric Mistral, 13140 Miramas", description: "Petit village provençal sympa à visiter et glacier réputé Le Quillé." },
     { name: "Les Baux-de-Provence", category: "tourisme", coords: [43.74487537186587, 4.794378331451952], address: "13520 Les Baux-de-Provence", description: "Village médiéval provençal en hauteur, château et carrière des lumières à visiter." },
     { name: "L'Isle-sur-la-Sorgue", category: "tourisme", coords: [43.917552484737605, 5.052320689062531], address: "84800 L'Isle-sur-la-Sorgue", description: "Village provençal." },
-    { name: "Village des marques", category: "shopping", coords: [43.59384299966176, 4.993471894392565], address: "6 Bd d'Espagne, 13140 Miramas", description: "McArthurGlen Provence - Village de Marques" }
+    { name: "Village des marques", category: "shopping", coords: [43.59384299966176, 4.993471894392565], address: "6 Bd d'Espagne, 13140 Miramas", description: "McArthurGlen Provence - Village de Marques" },
+     { name: "Chez nous", category: "maison", coords: [43.23521248422839, 5.402934640955494], address: "94 Av de la Jarre, 13009 Marseille", description: "" }
   ],
 
   // ----- Supabase (playlist & livre d'or) -----
