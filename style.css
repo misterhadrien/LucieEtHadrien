@@ -719,7 +719,7 @@ h1, h2, h3 {
 .map-legend__item--off { opacity: 0.35; text-decoration: line-through; }
 
 .map-wrap {
-  border-radius: var(--radius);
+  border-radius: 18px;
   overflow: hidden;
   box-shadow: 0 20px 50px rgba(74, 63, 53, 0.15);
   border: 1px solid rgba(154, 175, 148, 0.4);
