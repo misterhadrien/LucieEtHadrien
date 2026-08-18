@@ -38,7 +38,7 @@ var SITE_CONFIG = {
   stays: [
     {
       name: "Village Pont Royal en Provence Pierre & Vacances",
-      type: "🏨 Logement",
+      type: "🏨 Appart-Hôtel",
       image: "https://photos.pierreetvacances.com/admin/fp2/photos/43/800x600/AAA_111314_43.jpg",
       distance: "10 minutes en voiture",
       price: "à partir de 115 €/nuit",
