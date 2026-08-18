@@ -38,21 +38,21 @@ var SITE_CONFIG = {
   stays: [
     {
       name: "Village Pont Royal en Provence Pierre & Vacances",
-      type: "🏨 Hôtel",
-      image: "images/hebergement-01.jpg",
+      type: "🏨 Logement",
+      image: "https://photos.pierreetvacances.com/admin/fp2/photos/43/800x600/AAA_111314_43.jpg",
       distance: "10 minutes en voiture",
-      price: "[À COMPLÉTER]",
-      description: "[À COMPLÉTER — courte description de l'hébergement.]",
-      link: "[LIEN À AJOUTER]"
+      price: "à partir de 115 €/nuit",
+      description: "Ce village vacances propose des appartements et maisons dans un cadre verdoyant, avec piscine et nombreuses activités. Une option idéale pour prolonger votre séjour et profiter de la région en famille.",
+      link: "https://www.pierreetvacances.com/fr-fr/fp_POL_location-village-pont-royal-en-provence"
     },
     {
       name: "Camping Lou Paradou",
       type: "🏕️ Camping",
-      image: "images/hebergement-02.jpg",
+      image: "https://www.campinglouparadou.com/wp-content/uploads/2020/03/piscine-enfants-provence.jpg",
       distance: "10 minutes en voiture",
-      price: "[À COMPLÉTER]",
-      description: "[À COMPLÉTER — courte description de l'hébergement.]",
-      link: "[LIEN À AJOUTER]"
+      price: "environ 400€ la semaine le mobil-home de 4 à 6 personnes",
+      description: "Ce camping propose des mobil-homes climatisés avec terrasse, piscine et ambiance familiale. Une solution idéale pour séjourner à proximité du mariage et profiter de la Provence.",
+      link: "https://www.campinglouparadou.com/"
     },
     {
       name: "[Hébergement à ajouter]",
