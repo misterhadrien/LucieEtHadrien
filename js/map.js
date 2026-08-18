@@ -14,7 +14,7 @@
 var CATEGORIES = {
   mariage:  { label: "Lieu du mariage",       icon: "📍", color: "#8B5E3C" },
   logement: { label: "Hébergements",              icon: "⛺", color: "#B97962" },
-  gare:     { label: "Gares",                  icon: "🚉", color: "#7B8794" },
+  gare:     { label: "Gare",                  icon: "🚉", color: "#7B8794" },
   aeroport: { label: "Aéroport",              icon: "✈️", color: "#5F7892" },
   maison:   { label: "Chez nous",            icon: "🏠", color: "#A66A45" },
   tourisme: { label: "Lieux à découvrir",    icon: "🌿", color: "#657A52" }
