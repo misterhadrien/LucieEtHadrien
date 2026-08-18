@@ -12,14 +12,14 @@
 
   /* ---------- Catégories ---------- */
 var CATEGORIES = {
-  mariage:  { label: "📍 Lieu du mariage",       color: "#8B5E3C" }, // Terre cuite foncée
-  logement: { label: "🏨 Logement",              color: "#B97962" }, // Terracotta
-  camping:  { label: "🏕️ Camping",              color: "#7D9A6A" }, // Vert sauge
-  gare:     { label: "🚉 Gare",                  color: "#7B8794" }, // Gris bleuté
-  aeroport: { label: "✈️ Aéroport",              color: "#5F7892" }, // Bleu ardoise
-  shopping: { label: "👛 Shopping",              color: "#B68A5A" }, // Ocre
-  maison:   { label: "🏠 Chez nous",             color: "#A66A45" }, // Brun terracotta
-  tourisme: { label: "🌿 Lieux touristiques",    color: "#657A52" }  // Vert olive
+  mariage:  { label: "Lieu du mariage",       icon: "📍", color: "#8B5E3C" },
+  logement: { label: "Logement",              icon: "🏨", color: "#B97962" },
+  camping:  { label: "Camping",               icon: "🏕️", color: "#7D9A6A" },
+  gare:     { label: "Gare",                  icon: "🚉", color: "#7B8794" },
+  aeroport: { label: "Aéroport",              icon: "✈️", color: "#5F7892" },
+  shopping: { label: "Shopping",              icon: "👛", color: "#B68A5A" },
+  maison:   { label: "Chez nous",            icon: "🏠", color: "#A66A45" },
+  tourisme: { label: "Lieux touristiques",    icon: "🌿", color: "#657A52" }
 };
 
   var cfg = SITE_CONFIG.map;
@@ -82,13 +82,16 @@ var CATEGORIES = {
      }
    
      // Marqueur principal
-     var marker = L.circleMarker(latLng, {
-       radius: isVenue ? 13 : 7,
-       color: "#FFFFFF",
-       weight: isVenue ? 4 : 2,
-       fillColor: cat.color,
-       fillOpacity: 1
-     });
+   var marker = L.marker(latLng, {
+     icon: L.divIcon({
+       className: "map-marker-emoji",
+       html: '<span>' + cat.icon + '</span>',
+       iconSize: isVenue ? [46, 46] : [36, 36],
+       iconAnchor: isVenue ? [23, 23] : [18, 18],
+       popupAnchor: [0, isVenue ? -23 : -18]
+     }),
+     zIndexOffset: isVenue ? 1000 : 0
+   });
 
     var distanceLine = "";
     if (!isVenue && venueLatLng) {
@@ -128,7 +131,7 @@ var CATEGORIES = {
       item.className = "map-legend__item";
       item.style.setProperty("--pin", cat.color);
       item.setAttribute("aria-pressed", "true");
-      item.innerHTML = '<span class="map-legend__dot" aria-hidden="true"></span>' + cat.label;
+      item.innerHTML = cat.icon + " " + cat.label;
       item.addEventListener("click", function () {
         var group = layers[key];
         if (!group) return;
