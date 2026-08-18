@@ -103,9 +103,6 @@ var CATEGORIES = {
       "</div>"
     );
 
-    if (!layers[place.category]) {
-      layers[place.category] = L.layerGroup().addTo(map);
-    }
     layers[place.category].addLayer(marker);
   });
 
@@ -117,7 +114,6 @@ var CATEGORIES = {
       var item = document.createElement("button");
       item.type = "button";
       item.className = "map-legend__item";
-      item.style.setProperty("--pin", cat.color);
       item.setAttribute("aria-pressed", "true");
       item.innerHTML = cat.icon + " " + cat.label;
       item.addEventListener("click", function () {
