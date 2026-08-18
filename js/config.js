@@ -63,8 +63,8 @@ var SITE_CONFIG = {
   // (le lieu n'est alors pas affiché sur la carte).
   places: [
     { name: "Prieuré de Badasset", category: "mariage", coords: [43.662572915660775, 5.184551388295699], address: "D22, 13116 Vernègues", description: "" },
-    { name: "Village Pont Royal en Provence Pierre & Vacances", category: "hebergement", coords: [43.70948752142142, 5.222498364709028], address: "Domaine et Golf de Pont-Royal, 13370 Mallemort", description: "" },
-    { name: "Camping Lou Paradou", category: "hebergement", coords: [43.638668268187786, 5.275293288849929], address: "151 Chemin des Ponnes , Avenue d'Aix, 13410 Lambesc", description: "" },
+    { name: "Village Pont Royal en Provence Pierre & Vacances", category: "logement", coords: [43.70948752142142, 5.222498364709028], address: "Domaine et Golf de Pont-Royal, 13370 Mallemort", description: "" },
+    { name: "Camping Lou Paradou", category: "logement", coords: [43.638668268187786, 5.275293288849929], address: "151 Chemin des Ponnes , Avenue d'Aix, 13410 Lambesc", description: "" },
     { name: "Aix-en-Provence TGV", category: "gare", coords: [43.45528397038415, 5.317224067953765], address: "13290 Aix-en-Provence", description: "Gare TGV la plus proche." },
     { name: "Aéroport Marseille Provence", category: "aeroport", coords: [43.43848360548113, 5.215037835876824], address: "Marignane", description: "Aéroport le plus proche." },
     { name: "Parc Animalier de la Barben", category: "tourisme", coords: [43.62402386890663, 5.2095669809005205], address: "Rte du Château, 13330 La Barben,", description: "" },
