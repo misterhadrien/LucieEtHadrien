@@ -925,15 +925,18 @@ h1, h2, h3 {
   display: none;
 }
 .form__notice--success {
-  display: block;
+  /* display: block; */
   background-color: rgba(154, 175, 148, 0.25);
   border: 1px solid var(--color-sage);
 }
 .form__notice--info {
-  display: block;
+  /* display: block; */
   background-color: rgba(239, 231, 216, 0.9);
   border: 1px dashed var(--color-sage);
   font-style: italic;
+}
+.form__notice[hidden] {
+  display: none !important;
 }
 
 /* ---------- Cartes playlist / livre d'or ---------- */
