@@ -53,15 +53,6 @@ var SITE_CONFIG = {
       price: "environ 400€ la semaine le mobil-home de 4 à 6 personnes",
       description: "Ce camping propose des mobil-homes climatisés avec terrasse, piscine et ambiance familiale. Une solution idéale pour séjourner à proximité du mariage et profiter de la Provence.",
       link: "https://www.campinglouparadou.com/"
-    },
-    {
-      name: "[Hébergement à ajouter]",
-      type: "🌿 Gîte",
-      image: "images/hebergement-03.jpg",
-      distance: "[À COMPLÉTER]",
-      price: "[À COMPLÉTER]",
-      description: "[À COMPLÉTER — courte description de l'hébergement.]",
-      link: "[LIEN À AJOUTER]"
     }
   ],
 
