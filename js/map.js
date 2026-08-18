@@ -89,8 +89,7 @@ var CATEGORIES = {
       distanceLine = "<p>Distance : [coordonnées du lieu à compléter]</p>";
     }
 
-    var routeUrl = "https://www.openstreetmap.org/directions?to=" +
-                   latLng[0] + "%2C" + latLng[1];
+    var routeUrl = "https://www.google.com/maps/dir/?api=1&destination=" + latLng[0] + "," + latLng[1];
 
     marker.bindPopup(
       '<div class="map-popup">' +
@@ -105,6 +104,28 @@ var CATEGORIES = {
 
     layers[place.category].addLayer(marker);
   });
+
+   var venueButton = L.control({ position: "topright" });
+   
+   venueButton.onAdd = function () {
+     var div = L.DomUtil.create("button", "map-control-btn");
+     div.innerHTML = "📍 Lieu du mariage";
+     div.title = "Revenir au lieu du mariage";
+   
+     L.DomEvent.disableClickPropagation(div);
+   
+     div.onclick = function () {
+       if (venueLatLng) {
+         map.setView(venueLatLng, cfg.zoom, {
+           animate: true
+         });
+       }
+     };
+   
+     return div;
+   };
+   
+   venueButton.addTo(map);
 
   /* ---------- Légende (filtres cliquables) ---------- */
   var legend = document.getElementById("map-legend");
