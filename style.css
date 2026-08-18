@@ -755,14 +755,27 @@ h1, h2, h3 {
 
 .map-marker-emoji--venue span {
   font-size: 38px;
-  background: rgba(250, 246, 238, 0.9);
+  background: rgba(250, 246, 238, 0.92);
   border-radius: 50%;
-  width: 42px;
-  height: 42px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  width: 44px;
+  height: 44px;
+  box-shadow: 0 3px 12px rgba(74, 63, 53, 0.3);
+}
+
+.map-control-btn {
+  background: rgba(250, 246, 238, 0.95);
+  border: 1px solid rgba(154, 175, 148, 0.5);
+  border-radius: var(--radius);
+  padding: 0.55rem 0.8rem;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  color: var(--color-brown);
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(74, 63, 53, 0.15);
+}
+
+.map-control-btn:hover {
+  background: var(--color-cream);
 }
 
 #map { height: clamp(380px, 60vw, 560px); width: 100%; }
@@ -793,6 +806,16 @@ h1, h2, h3 {
   opacity: 0.65;
   background: rgba(250, 246, 238, 0.8) !important;
   padding: 2px 5px !important;
+}
+
+.leaflet-control-zoom a {
+  color: var(--color-brown) !important;
+  background: rgba(250, 246, 238, 0.95) !important;
+  border-color: rgba(154, 175, 148, 0.4) !important;
+}
+
+.leaflet-control-zoom a:hover {
+  background: var(--color-cream) !important;
 }
 
 /* ---------- Cartes hébergement / recommandations ---------- */
