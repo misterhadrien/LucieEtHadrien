@@ -141,7 +141,7 @@
     }
 
     if (!configured) {
-      showInfo("Le service en ligne n'est pas encore connecté (voir js/config.js). Votre message n'a pas pu être enregistré.");
+      showInfo("Erreur de connexion à la base de données. Votre message n'a pas pu être enregistré.");
       return;
     }
 
