@@ -67,24 +67,12 @@ var CATEGORIES = {
        layers[place.category] = L.layerGroup().addTo(map);
      }
    
-     // Halo du lieu du mariage
-     if (isVenue) {
-       var halo = L.circleMarker(latLng, {
-         radius: 21,
-         color: cat.color,
-         weight: 2,
-         fillColor: cat.color,
-         fillOpacity: 0.15,
-         opacity: 0.7
-       });
-   
-       layers[place.category].addLayer(halo);
-     }
-   
      // Marqueur principal
    var marker = L.marker(latLng, {
      icon: L.divIcon({
-       className: "map-marker-emoji",
+       className: isVenue
+         ? "map-marker-emoji map-marker-emoji--venue"
+         : "map-marker-emoji",
        html: '<span>' + cat.icon + '</span>',
        iconSize: isVenue ? [46, 46] : [36, 36],
        iconAnchor: isVenue ? [23, 23] : [18, 18],
