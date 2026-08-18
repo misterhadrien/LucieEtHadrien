@@ -14,14 +14,11 @@
   var CATEGORIES = {
     mariage:     { label: "📍 Lieu du mariage", color: "#7D8B6F" },
     hotel:       { label: "🏨 Hôtels",           color: "#C98F76" },
-    gite:        { label: "🏡 Gîtes / chambres d'hôtes", color: "#9CAF94" },
-    parking:     { label: "🚗 Parkings",         color: "#7A6E61" },
+    camping:     { label: "🏕️ Campings", color: "#9CAF94" },
     gare:        { label: "🚉 Gares",            color: "#BDB1CE" },
     aeroport:    { label: "✈️ Aéroports",        color: "#8E9AAF" },
     restaurant:  { label: "🍽️ Restaurants",     color: "#C08552" },
-    cafe:        { label: "☕ Cafés / boulangeries", color: "#D6A75C" },
-    supermarche: { label: "🛒 Supermarchés",     color: "#7FA08C" },
-    pharmacie:   { label: "💊 Pharmacies",       color: "#9CAF94" },
+    cafe:        { label: "☕ Cafés", color: "#D6A75C" },
     services:    { label: "🏥 Services utiles",  color: "#A0857A" },
     tourisme:    { label: "🌿 Lieux touristiques", color: "#6A7A5E" }
   };
