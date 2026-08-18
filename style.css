@@ -733,6 +733,12 @@ h1, h2, h3 {
   border: 1px solid rgba(154, 175, 148, 0.4);
 }
 
+.map-wrap + .btn {
+  display: block;
+  width: fit-content;
+  margin: 1.5rem auto 0;
+}
+
 #map { height: clamp(380px, 60vw, 560px); width: 100%; }
 
 .map-popup { font-family: var(--font-sans); color: var(--color-brown); }
