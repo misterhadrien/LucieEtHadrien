@@ -33,7 +33,7 @@ var CATEGORIES = {
   map.on("click", function () { map.scrollWheelZoom.enable(); });
   map.on("mouseout", function () { map.scrollWheelZoom.disable(); });
 
-   L.tileLayer("https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png", {
+   L.tileLayer("https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png", {
      maxZoom: 20,
      attribution: '&copy; OpenStreetMap contributors &copy; CARTO'
    }).addTo(map);
