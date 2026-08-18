@@ -739,6 +739,38 @@ h1, h2, h3 {
   margin: 1.5rem auto 0;
 }
 
+.map-marker-emoji {
+  background: transparent;
+  border: none;
+}
+
+.map-marker-emoji span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  font-size: 28px;
+  line-height: 1;
+  filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.25));
+}
+
+.map-marker-emoji span:hover {
+  transform: scale(1.15);
+}
+
+.map-marker-emoji {
+  transition: transform 0.2s ease;
+}
+
+.map-marker-emoji span {
+  cursor: pointer;
+}
+
+.map-marker-emoji--venue span {
+  font-size: 38px;
+}
+
 #map { height: clamp(380px, 60vw, 560px); width: 100%; }
 
 .map-popup { font-family: var(--font-sans); color: var(--color-brown); }
