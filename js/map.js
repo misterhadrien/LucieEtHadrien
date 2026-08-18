@@ -17,7 +17,7 @@
     camping:     { label: "🏕️ Campings", color: "#9CAF94" },
     gare:        { label: "🚉 Gares",            color: "#BDB1CE" },
     aeroport:    { label: "✈️ Aéroports",        color: "#8E9AAF" },
-    // restaurant:  { label: "🍽️ Restaurants",     color: "#C08552" },
+    shopping:  { label: "👛 Shopping",     color: "#C08552" },
     tourisme:    { label: "🌿 Lieux touristiques", color: "#6A7A5E" }
   };
 
