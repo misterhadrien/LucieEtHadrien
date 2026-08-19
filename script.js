@@ -11,6 +11,20 @@
   var burger = document.getElementById("nav-burger");
   var menu = document.getElementById("nav-menu");
 
+   const backToTop = document.getElementById("back-to-top");
+   if (backToTop) {
+       window.addEventListener("scroll", function () {
+           backToTop.hidden = window.scrollY < 500;
+       });
+       backToTop.addEventListener("click", function () {
+           window.scrollTo({
+               top: 0,
+               behavior: "smooth"
+           });
+       });
+   }
+
+   
   // Fond crème plus opaque au scroll
   function onScroll() {
     nav.classList.toggle("nav--scrolled", window.scrollY > 40);
