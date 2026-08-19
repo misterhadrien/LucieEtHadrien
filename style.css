@@ -23,7 +23,11 @@
 }
 
 /* ---------- Base ---------- */
-* { margin: 0; padding: 0; box-sizing: border-box; }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 html { scroll-behavior: smooth; }
 
@@ -115,9 +119,12 @@ h1, h2, h3 {
   background-color: var(--color-olive);
   color: var(--color-cream);
 }
-.btn--primary:hover { background-color: #6A7A5E; }
-
-.btn--large { padding: 1.15rem 3rem; }
+.btn--primary:hover {
+  background-color: var(--color-sage);
+}
+.btn--large {
+  padding: 1.15rem 3rem;
+}
 
 /* ---------- Navigation ---------- */
 .nav {
@@ -180,7 +187,9 @@ h1, h2, h3 {
 .nav__menu a:hover,
 .nav__menu a:focus-visible { color: var(--color-brown); }
 .nav__menu a:hover::after,
-.nav__menu a:focus-visible::after { transform: scaleX(1); }
+.nav__menu a:focus-visible::after {
+    transform: scaleX(1);
+}
 
 .nav__burger {
   display: none;
