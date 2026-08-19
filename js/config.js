@@ -18,7 +18,7 @@ var SITE_CONFIG = {
     title: "💍 Mariage de Lucie & Hadrien",
     description: "Le mariage de Lucie & Hadrien — 15 mai 2027",
     location: "Prieuré de Badasset",
-    start: "20270515T143000",   // format ICS : 15 mai 2027, 14h30 (heure locale)
+    start: "20270515T140000",   // format ICS : 15 mai 2027, 14h30 (heure locale)
     end: "20270516T020000"      // fin indicative : 2h du matin
   },
 
