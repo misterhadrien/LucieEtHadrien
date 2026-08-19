@@ -47,6 +47,12 @@
   }
 
   function renderList(entries) {
+    var count = document.getElementById("playlist-count");
+    if (count) {
+       count.textContent =
+           entries.length +
+           " chansons proposées";
+    }
     list.innerHTML = "";
     if (!entries.length) {
       list.innerHTML = '<p class="section__subtitle" style="grid-column:1/-1">Aucune chanson proposée pour le moment — soyez le premier !</p>';
