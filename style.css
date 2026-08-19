@@ -687,7 +687,13 @@ h1, h2, h3 {
    Extensions : carte interactive, hébergements, calendrier, formulaires,
    pages La Provence / Playlist / Livre d'or
    ========================================================================== */
-
+.playlist-count {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 1rem;
+    color: var(--color-olive);
+    letter-spacing: 0.05em;
+}
 /* ---------- Navigation : CTA RSVP ---------- */
 .nav__cta {
   border: 1px solid var(--color-olive);
