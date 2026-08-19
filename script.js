@@ -18,6 +18,14 @@
   window.addEventListener("scroll", onScroll, { passive: true });
   onScroll();
 
+   window.addEventListener("resize", function () {
+       if (window.innerWidth > 860) {
+           menu.classList.remove("nav__menu--open");
+           document.body.style.overflow = "";
+           burger.setAttribute("aria-expanded", "false");
+       }
+   });
+   
   // Menu hamburger (mobile)
   burger.addEventListener("click", function () {
     var open = menu.classList.toggle("nav__menu--open");
