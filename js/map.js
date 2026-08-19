@@ -17,7 +17,8 @@ var CATEGORIES = {
   gare:     { label: "Gare",                  icon: "🚉", color: "#7B8794" },
   aeroport: { label: "Aéroport",              icon: "✈️", color: "#5F7892" },
   maison:   { label: "Chez nous",            icon: "🏠", color: "#A66A45" },
-  tourisme: { label: "Lieux à découvrir",    icon: "🌿", color: "#657A52" }
+  tourisme: { label: "Lieux à découvrir",    icon: "🌿", color: "#657A52" },
+   mairie: { label: "Mairie",    icon: "📝", color: "#657A52" }
 };
 
   var cfg = SITE_CONFIG.map;
