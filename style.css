@@ -1047,6 +1047,12 @@ h1, h2, h3 {
   margin-bottom: 0.2rem;
 }
 
+.entry-card__date {
+    font-size: 0.8rem;
+    color: var(--color-brown-soft);
+    margin-bottom: 0.8rem;
+}
+
 .entry-card__artist { color: var(--color-olive); font-size: 0.95rem; margin-bottom: 0.7rem; }
 .entry-card__message { color: var(--color-brown-soft); font-size: 0.95rem; margin-bottom: 0.7rem; font-style: italic; }
 .entry-card__author { font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-brown-soft); }
