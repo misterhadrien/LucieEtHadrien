@@ -398,7 +398,7 @@ h1, h2, h3 {
   border-radius: 50%;
   background-color: var(--color-cream);
   border: 2px solid var(--color-olive);
-  left: calc(var(--timeline-line-x) - 6px);
+  left: calc(var(--timeline-line-x) - 6.5px);
 }
 
 .timeline__time {
@@ -419,7 +419,7 @@ h1, h2, h3 {
       left: var(--timeline-line-x-mobile);
    }
    .timeline__item::before {
-      left: calc(var(--timeline-line-x-mobile) - 6px);
+      left: calc(var(--timeline-line-x-mobile) - 6.5px);
    }
   .timeline__time { width: 48px; font-size: 1.15rem; }
   .timeline__item { gap: 1.4rem; }
