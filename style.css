@@ -368,6 +368,7 @@ h1, h2, h3 {
   margin-left: auto;
   margin-right: auto;
   --timeline-line-x: 89px;
+  --timeline-line-x-mobile: 69px;
 }
 
 .timeline::before {
@@ -397,7 +398,7 @@ h1, h2, h3 {
   border-radius: 50%;
   background-color: var(--color-cream);
   border: 2px solid var(--color-olive);
-  left: calc(var(--timeline-line-x) - 6.5px);
+  left: calc(var(--timeline-line-x) - 6px);
 }
 
 .timeline__time {
@@ -414,8 +415,12 @@ h1, h2, h3 {
 .timeline__body p { color: var(--color-brown-soft); font-size: 0.95rem; }
 
 @media (max-width: 540px) {
-  .timeline::before { left: 66px; }
-  .timeline__item::before { left: 62.5px; }
+   .timeline::before {
+      left: var(--timeline-line-x-mobile);
+   }
+   .timeline__item::before {
+      left: calc(var(--timeline-line-x-mobile) - 6px);
+   }
   .timeline__time { width: 48px; font-size: 1.15rem; }
   .timeline__item { gap: 1.4rem; }
 }
