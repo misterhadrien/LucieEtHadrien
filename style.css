@@ -205,7 +205,10 @@ h1, h2, h3 {
 .nav__burger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
 
 @media (max-width: 860px) {
-  .nav__burger { display: flex; }
+  .nav__burger { 
+     display: flex;
+     z-index: 1001;
+  }
 
   .nav__menu {
     position: fixed;
@@ -219,6 +222,8 @@ h1, h2, h3 {
     opacity: 0;
     visibility: hidden;
     transition: transform 0.45s ease, opacity 0.45s ease, visibility 0.45s;
+    z-index: 1000;
+    background-color: #FAF6EE;
   }
 
   .nav__menu--open {
