@@ -411,8 +411,8 @@ h1, h2, h3 {
   flex-shrink: 0;
 }
 
-.timeline__body h3 { font-size: 1.35rem; margin-bottom: 0.3rem; }
-.timeline__body p { color: var(--color-brown-soft); font-size: 0.95rem; }
+.timeline__body h3 { font-size: 1.35rem; margin-bottom: 0.3rem; padding-left: 0.75rem; }
+.timeline__body p { color: var(--color-brown-soft); font-size: 0.95rem; padding-left: 0.75rem; }
 
 @media (max-width: 540px) {
    .timeline::before {
