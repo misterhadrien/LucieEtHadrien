@@ -24,23 +24,20 @@ var SITE_CONFIG = {
 
   // ----- Carte interactive (Leaflet + OpenStreetMap, gratuit) -----
   map: {
-    // Coordonnées PROVISOIRES du lieu de mariage — À REMPLACER par les vraies.
-    // format : { lat: 43.5297, lng: 5.4474 }
+    // Coordonnées du lieu de mariage
     venueCoords: { lat: 43.662572915660775, lng: 5.184551388295699 },
-    // Centre de repli tant que les coordonnées du lieu ne sont pas connues
-    // (zone Provence) :
+    // Centre de repli
     fallbackCenter: { lat: 43.662572915660775, lng: 5.184551388295699 },
     zoom: 9
   },
 
   // ----- Hébergements affichés sur la page d'accueil -----
-  // Ajoutez/supprimez librement des objets dans cette liste.
   stays: [
     {
       name: "Village Pont Royal en Provence Pierre & Vacances",
       type: "🏨 Appart-Hôtel",
       image: "https://photos.pierreetvacances.com/admin/fp2/photos/43/800x600/AAA_111314_43.jpg",
-      distance: "10 minutes en voiture",
+      distance: "12 minutes en voiture",
       price: "à partir de 115 €/nuit",
       description: "Ce village vacances propose des appartements et maisons dans un cadre verdoyant, avec piscine et nombreuses activités. Une option idéale pour prolonger votre séjour et profiter de la région en famille.",
       link: "https://www.pierreetvacances.com/fr-fr/fp_POL_location-village-pont-royal-en-provence"
@@ -49,18 +46,13 @@ var SITE_CONFIG = {
       name: "Camping Lou Paradou",
       type: "🏕️ Camping",
       image: "https://www.campinglouparadou.com/wp-content/uploads/2020/03/piscine-enfants-provence.jpg",
-      distance: "10 minutes en voiture",
+      distance: "12 minutes en voiture",
       price: "à partir de 300€/semaine mobil-home 4 à 6 personnes",
       description: "Ce camping propose des mobil-homes climatisés avec terrasse, piscine et ambiance familiale. Une solution idéale pour séjourner à proximité du mariage et profiter de la Provence.",
       link: "https://www.campinglouparadou.com/"
     }
   ],
 
-  // ----- Lieux affichés sur la carte interactive -----
-  // categories disponibles : mariage, hotel, gite, parking, gare, aeroport,
-  //                         restaurant, cafe, supermarche, pharmacie, services, tourisme
-  // "coords" : null tant que les coordonnées réelles ne sont pas connues
-  // (le lieu n'est alors pas affiché sur la carte).
   places: [
     { name: "Prieuré de Badasset", category: "mariage", coords: [43.662572915660775, 5.184551388295699], address: "Vernègues", description: "" },
     { name: "Village Pont Royal en Provence Pierre & Vacances", category: "logement", coords: [43.70948752142142, 5.222498364709028], address: "Mallemort", description: "" },
@@ -85,20 +77,8 @@ var SITE_CONFIG = {
      { name: "Cassis", category: "tourisme", coords: [43.21382820862716, 5.537965976597395], address: "Aix-en-Provence", description: "Port et bâteau visite des calanques" }
   ],
 
-  // ----- Supabase (playlist & livre d'or) -----
-  // 1. Créez un projet gratuit sur https://supabase.com
-  // 2. Créez les tables :
-  //      playlist  (id bigint generated, created_at timestamptz default now(),
-  //                 first_name text, last_name text, song_title text,
-  //                 artist text, message text)
-  //      guestbook (id bigint generated, created_at timestamptz default now(),
-  //                 first_name text, last_name text, message text)
-  //    avec Row Level Security :
-  //      - INSERT + SELECT autorisés pour le rôle "anon"
-  //      - DELETE réservé au rôle "service_role" (modération par vous)
-  // 3. Copiez l'URL du projet et la clé "anon" ci-dessous.
   supabase: {
-    url: "https://dgnqyrrpwlulowbfswtm.supabase.co",        // ex. "https://xxxxxxxx.supabase.co"
-    anonKey: "sb_publishable_XRQ-Mp2Uc-wobaZjy0t7iQ_CxomcXyT"     // clé publique "anon" (jamais la clé service_role)
+    url: "https://dgnqyrrpwlulowbfswtm.supabase.co",       
+    anonKey: "sb_publishable_XRQ-Mp2Uc-wobaZjy0t7iQ_CxomcXyT"     
   }
 };
