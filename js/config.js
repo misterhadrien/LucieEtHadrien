@@ -50,7 +50,7 @@ var SITE_CONFIG = {
       type: "🏕️ Camping",
       image: "https://www.campinglouparadou.com/wp-content/uploads/2020/03/piscine-enfants-provence.jpg",
       distance: "10 minutes en voiture",
-      price: "environ 400€ la semaine le mobil-home de 4 à 6 personnes",
+      price: "à partir de 300€/semaine mobil-home 4 à 6 personnes",
       description: "Ce camping propose des mobil-homes climatisés avec terrasse, piscine et ambiance familiale. Une solution idéale pour séjourner à proximité du mariage et profiter de la Provence.",
       link: "https://www.campinglouparadou.com/"
     }
