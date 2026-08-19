@@ -21,6 +21,7 @@
   // Menu hamburger (mobile)
   burger.addEventListener("click", function () {
     var open = menu.classList.toggle("nav__menu--open");
+    document.body.style.overflow = open ? "hidden" : "";
     burger.setAttribute("aria-expanded", open ? "true" : "false");
     burger.setAttribute("aria-label", open ? "Fermer le menu" : "Ouvrir le menu");
   });
