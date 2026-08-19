@@ -978,16 +978,18 @@ h1, h2, h3 {
   display: none;
 }
 .form__field--invalid input,
-.form__field--invalid textarea { border-color: #A05B45; }
-.form__field--invalid .form__error { display: block; }
-
+.form__field--invalid textarea {
+  border-color: #A05B45;
+}
+.form__field--invalid .form__error {
+  display: block;
+}
 .form__notice {
   margin: 1.4rem auto 0;
   max-width: 620px;
   padding: 1rem 1.4rem;
   border-radius: var(--radius);
   font-size: 0.92rem;
-  display: none;
 }
 .form__notice--success {
   /* display: block; */
@@ -1002,6 +1004,9 @@ h1, h2, h3 {
 }
 .form__notice[hidden] {
   display: none !important;
+}
+.form__notice:not([hidden]) {
+  display: block;
 }
 
 /* ---------- Cartes playlist / livre d'or ---------- */
