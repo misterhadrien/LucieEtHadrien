@@ -99,6 +99,22 @@
   updateCountdown();
   setInterval(updateCountdown, 1000);
 
+   function updatePageTitle() {
+       var now = new Date();
+       var diff = targetDate - now;
+       var days = Math.ceil(
+           diff / (1000 * 60 * 60 * 24)
+       );
+       if (days > 0) {
+           document.title =
+               "Lucie & Hadrien • J-" + days;
+       } else {
+           document.title =
+               "Lucie & Hadrien 💍";
+       }
+   }
+   updatePageTitle();
+
   /* ---------- Apparition au scroll ---------- */
   var prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
