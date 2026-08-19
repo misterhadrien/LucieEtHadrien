@@ -72,10 +72,15 @@ var SITE_CONFIG = {
     { name: "Savonnerie Marius Fabre", category: "tourisme", coords: [43.63780742870377, 5.090869367407603], address: "Salon-de-Provence", description: "Visite gratuite sur réservation et magasin d'usine" },
     { name: "Miramas le vieux", category: "tourisme", coords: [43.5632802799067, 5.024749044443601], address: "Miramas", description: "Petit village provençal et glacier réputé Le Quillé" },
     { name: "Les Baux-de-Provence", category: "tourisme", coords: [43.74487537186587, 4.794378331451952], address: "Les Baux-de-Provence", description: "Village médiéval provençal en hauteur, château et carrière des lumières à visiter" },
-    { name: "L'Isle-sur-la-Sorgue", category: "tourisme", coords: [43.917552484737605, 5.052320689062531], address: "L'Isle-sur-la-Sorgue", description: "Village provençal" },
+    { name: "L'Isle-sur-la-Sorgue", category: "tourisme", coords: [43.917552484737605, 5.052320689062531], address: "L'Isle-sur-la-Sorgue", description: "La venise provençal et canoë" },
     { name: "Village des marques", category: "tourisme", coords: [43.59384299966176, 4.993471894392565], address: "Miramas", description: "McArthurGlen Provence" },
     { name: "Chez nous", category: "maison", coords: [43.23521248422839, 5.402934640955494], address: "Marseille", description: "" },
-    { name: "Mairie", category: "mairie", coords: [43.630169561351174, 5.176226038253986], address: "La Barben", description: "" }
+    { name: "Mairie", category: "mairie", coords: [43.630169561351174, 5.176226038253986], address: "La Barben", description: "" },
+     { name: "Château Virant", category: "tourisme", coords: [43.549441239117755, 5.154855198014228], address: "Lançon-Provence", description: "Domaine viticole, visite gratuite avec musée sur l'huile d'olive" },
+     { name: "Château Bas", category: "tourisme", coords: [43.68372658909194, 5.196703112675502], address: "Vernègues", description: "Domaine viticole" },
+     { name: "Colorado Provençal", category: "tourisme", coords: [43.92010331682514, 5.499618831698154], address: "Rustrel", description: "" },
+     { name: "Rousillon", category: "tourisme", coords: [43.90237093505007, 5.292920938686112], address: "Rousillon", description: "Village provençal" },
+     { name: "Fontaine de Vaucluse", category: "tourisme", coords: [43.92216452206535, 5.127757219955902], address: "Fontaine de Vaucluse", description: "Village provençal et visite gratuite du torrent de la sorgue" }
   ],
 
   // ----- Supabase (playlist & livre d'or) -----
