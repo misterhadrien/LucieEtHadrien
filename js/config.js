@@ -80,7 +80,9 @@ var SITE_CONFIG = {
      { name: "Château Bas", category: "tourisme", coords: [43.68372658909194, 5.196703112675502], address: "Vernègues", description: "Domaine viticole" },
      { name: "Colorado Provençal", category: "tourisme", coords: [43.92010331682514, 5.499618831698154], address: "Rustrel", description: "" },
      { name: "Rousillon", category: "tourisme", coords: [43.90237093505007, 5.292920938686112], address: "Rousillon", description: "Village provençal" },
-     { name: "Fontaine de Vaucluse", category: "tourisme", coords: [43.92216452206535, 5.127757219955902], address: "Fontaine de Vaucluse", description: "Village provençal et visite gratuite du torrent de la sorgue" }
+     { name: "Fontaine de Vaucluse", category: "tourisme", coords: [43.92216452206535, 5.127757219955902], address: "Fontaine de Vaucluse", description: "Village provençal et visite gratuite du torrent de la sorgue" },
+     { name: "Aix-en-Provence", category: "tourisme", coords: [43.52638250545041, 5.445492623216467], address: "Aix-en-Provence", description: "" },
+     { name: "Cassis", category: "tourisme", coords: [43.21382820862716, 5.537965976597395], address: "Aix-en-Provence", description: "Port et bâteau visite des calanques" }
   ],
 
   // ----- Supabase (playlist & livre d'or) -----
