@@ -23,7 +23,7 @@ END:VTIMEZONE
 BEGIN:VEVENT
 UID:mariage-lucie-hadrien-2027@lucie-et-hadrien.fr
 DTSTAMP:20260816T000000Z
-DTSTART;TZID=Europe/Paris:20270515T143000
+DTSTART;TZID=Europe/Paris:20270515T140000
 DTEND;TZID=Europe/Paris:20270516T020000
 SUMMARY:💍 Mariage de Lucie & Hadrien
 DESCRIPTION:Le mariage de Lucie & Hadrien — 15 mai 2027
