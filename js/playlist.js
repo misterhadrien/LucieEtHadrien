@@ -87,13 +87,13 @@
     return !invalid;
   }
 
-  function validate(data) {
-    var ok = true;
-    ok = setInvalid(form.elements.firstName, !data.firstName) && ok;
-    ok = setInvalid(form.elements.songTitle, !data.songTitle) && ok;
-    ok = setInvalid(form.elements.artist, !data.artist) && ok;
-    return ok;
-  }
+   function validate(data) {
+     var ok = true;
+     ok = setInvalid(form.elements.firstName, !data.first_name) && ok;
+     ok = setInvalid(form.elements.songTitle, !data.song_title) && ok;
+     ok = setInvalid(form.elements.artist, !data.artist) && ok;
+     return ok;
+   }
 
   /* ---------- Protection anti-spam ---------- */
   var MIN_FILL_TIME = 3000; // le formulaire doit rester 3s ouvert (anti-robot)
