@@ -40,15 +40,33 @@
       .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
       .replace(/"/g, "&quot;").replace(/'/g, "&#39;");
   }
-
-  function renderEntry(entry) {
+function formatDate(dateStr) {
+    var date = new Date(dateStr);
+    return date.toLocaleDateString("fr-FR", {
+        day: "numeric",
+        month: "long",
+        year: "numeric"
+    });
+}
+function renderEntry(entry) {
     var card = document.createElement("article");
-    card.className = "entry-card" + (entry.demo ? " entry-card--demo" : "");
+    card.className =
+        "entry-card" +
+        (entry.demo ? " entry-card--demo" : "");
     card.innerHTML =
-      '<p class="entry-card__message">« ' + escapeHtml(entry.message) + " »</p>" +
-      '<p class="entry-card__author">— ' + escapeHtml(entry.first_name) + "</p>";
+        '<p class="entry-card__author">' +
+        escapeHtml(entry.first_name) +
+        '</p>' +
+        (entry.created_at
+            ? '<p class="entry-card__date">' +
+              formatDate(entry.created_at) +
+              '</p>'
+            : '') +
+        '<p class="entry-card__message">« ' +
+        escapeHtml(entry.message) +
+        ' »</p>';
     return card;
-  }
+}
 
   function renderList(entries) {
     list.innerHTML = "";
