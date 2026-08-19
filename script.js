@@ -43,8 +43,15 @@
   });
 
   /* ---------- Compte à rebours ---------- */
-  // Date cible : 15 mai 2027, 14h30 (heure locale)
-  var targetDate = new Date(2027, 4, 15, 14, 30, 0);
+   var start = SITE_CONFIG.event.start;
+   var targetDate = new Date(
+       parseInt(start.substring(0, 4)),
+       parseInt(start.substring(4, 6)) - 1,
+       parseInt(start.substring(6, 8)),
+       parseInt(start.substring(9, 11)),
+       parseInt(start.substring(11, 13)),
+       0
+   );
 
   var el = {
     days: document.getElementById("cd-days"),
