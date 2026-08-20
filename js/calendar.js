@@ -4,28 +4,28 @@
 
 (function () {
   "use strict";
-*  if (
-    typeof SITE_CONFIG === *undefined" ||
-    !SITE_CONFIG.eve*t
+  if (
+    typeof SITE_CONFIG === "undefined" ||
+    !SITE_CONFIG.event
   ) {
     return;
   }
 
-  var ev * SITE_CONFIG.event;
-  var link = d*cument.getElementById("btn-google-*alendar");
+  var ev SITE_CONFIG.event;
+  var link = document.getElementById("btn-google-calendar");
 
   if (!link) {
-    ret*rn;
+    return;
   }
 
-  var params = new URLSea*chParams({
-    action: "TEMPLATE",*    text: ev.title,
-    dates: ev.*tart + "/" + ev.end,
-    ctz: "Eur*pe/Paris",
-    location: ev.locati*n,
+  var params = new URLSearchParams({
+    action: "TEMPLATE",    text: ev.title,
+    dates: ev.start + "/" + ev.end,
+    ctz: "Europe/Paris",
+    location: ev.location,
     details: ev.description
-  }*;
+  });
 
   link.href =
-    "https://calendar.google.com/calendar/render?" +*    params.toString();
+    "https://calendar.google.com/calendar/render?" +    params.toString();
 })();
