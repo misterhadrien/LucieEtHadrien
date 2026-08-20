@@ -1,16 +1,3 @@
-/* ==========================================================================
-   Configuration du site — Lucie & Hadrien
-   ==========================================================================
-   Ce fichier regroupe les réglages externes modifiables facilement.
-
-   IMPORTANT — Sécurité :
-   - La clé "anon" de Supabase est conçue pour être publique côté client
-     (sécurisation par Row Level Security côté base).
-   - Ne JAMAIS mettre la clé "service_role" ni un mot de passe dans ce fichier.
-   - Tant que les placeholders ne sont pas remplacés, les formulaires
-     (playlist, livre d'or) restent en mode démonstration locale.
-   ========================================================================== */
-
 var SITE_CONFIG = {
 
   // ----- Événement (utilisé par le compte à rebours et le calendrier) -----
@@ -18,11 +5,11 @@ var SITE_CONFIG = {
     title: "💍 Mariage de Lucie & Hadrien",
     description: "Le mariage de Lucie & Hadrien — 15 mai 2027",
     location: "Prieuré de Badasset",
-    start: "20270515T140000",   // format ICS : 15 mai 2027, 14h30 (heure locale)
+    start: "20270515T140000",   // format ICS : 15 mai 2027, 14h00 (heure locale)
     end: "20270516T020000"      // fin indicative : 2h du matin
   },
 
-  // ----- Carte interactive (Leaflet + OpenStreetMap, gratuit) -----
+  // ----- Carte interactive (Leaflet + OpenStreetMap) -----
   map: {
     // Coordonnées du lieu de mariage
     venueCoords: { lat: 43.662572915660775, lng: 5.184551388295699 },
