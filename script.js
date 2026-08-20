@@ -52,7 +52,9 @@
   menu.querySelectorAll("a").forEach(function (link) {
     link.addEventListener("click", function () {
       menu.classList.remove("nav__menu--open");
+      document.body.style.overflow = "";
       burger.setAttribute("aria-expanded", "false");
+      burger.setAttribute("aria-label", "Ouvrir le menu");
     });
   });
 
@@ -113,7 +115,9 @@
                "Lucie & Hadrien 💍";
        }
    }
-   updatePageTitle();
+if (document.getElementById("cd-days")) {
+  updatePageTitle();
+}
 
   /* ---------- Apparition au scroll ---------- */
   var prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
