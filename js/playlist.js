@@ -1,10 +1,3 @@
-/* ==========================================================================
-   Playlist des mariés — persistance via Supabase (compatible GitHub Pages)
-   Configuration : voir js/config.js (SITE_CONFIG.supabase)
-   Table attendue : playlist (id, created_at, first_name, last_name,
-                                  song_title, artist, message)
-   ========================================================================== */
-
 (function () {
   "use strict";
 
@@ -13,10 +6,6 @@
   var successBox = document.getElementById("pl-success");
   var infoBox = document.getElementById("pl-info");
   if (!form || !list) return;
-
-  var DEMO_ENTRIES = [
-    { song_title: "[Titre d'exemple]", artist: "[Artiste]", first_name: "Prénom", message: "", demo: true }
-  ];
 
   /* ---------- Connexion Supabase ---------- */
   function getClient() {
@@ -34,17 +23,36 @@
       .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
       .replace(/"/g, "&quot;").replace(/'/g, "&#39;");
   }
-
-  function renderEntry(entry) {
-    var card = document.createElement("article");
-    card.className = "entry-card" + (entry.demo ? " entry-card--demo" : "");
-    card.innerHTML =
-      '<p class="entry-card__title">🎵 ' + escapeHtml(entry.song_title) + "</p>" +
-      '<p class="entry-card__artist">' + escapeHtml(entry.artist) + "</p>" +
-      (entry.message ? '<p class="entry-card__message">« ' + escapeHtml(entry.message) + " »</p>" : "") +
-      '<p class="entry-card__author">Proposée par : ' + escapeHtml(entry.first_name) + "</p>";
-    return card;
-  }
+function getDisplayName(entry) {
+  var firstName = entry.first_name || "";
+  var lastName = entry.last_name || "";
+  return [firstName, lastName]
+    .filter(Boolean)
+    .join(" ");
+}
+function renderEntry(entry) {
+  var card = document.createElement("article");
+  card.className =
+    "entry-card" +
+    (entry.demo ? " entry-card--demo" : "");
+  var author = getDisplayName(entry);
+  card.innerHTML =
+    '<h3 class="entry-card__title">🎵 ' +
+      escapeHtml(entry.song_title) +
+    "</h3>" +
+    '<p class="entry-card__artist">' +
+      escapeHtml(entry.artist) +
+    "</p>" +
+    (entry.message
+      ? '<p class="entry-card__message">« ' +
+          escapeHtml(entry.message) +
+        " »</p>"
+      : "") +
+    '<p class="entry-card__author">Proposée par : ' +
+      escapeHtml(author) +
+    "</p>";
+  return card;
+}
 
   function renderList(entries) {
     list.innerHTML = "";
@@ -69,7 +77,7 @@
     }
     client
       .from("playlist")
-      .select("song_title, artist, first_name, message, created_at")
+      .select("song_title, artist, first_name, last_name, message, created_at")
       .order("created_at", { ascending: false })
       .limit(200)
       .then(function (res) {
