@@ -54,20 +54,28 @@ function renderEntry(entry) {
   return card;
 }
 
-  function renderList(entries) {
-    list.innerHTML = "";
-    if (!entries.length) {
-      list.innerHTML = '<p class="section__subtitle" style="grid-column:1/-1">Aucune chanson proposée pour le moment — soyez le premier !</p>';
-      return;
+function renderList(entries) {
+  list.innerHTML = "";
+  var count = document.getElementById("playlist-count");
+  if (count) {
+    if (entries.length === 0) {
+      count.textContent = "Aucune chanson proposée";
+    } else if (entries.length === 1) {
+      count.textContent = "1 chanson proposée";
+    } else {
+      count.textContent =
+        entries.length + " chansons proposées";
     }
-    var count = document.getElementById("playlist-count");
-    if (count) {
-       count.textContent =
-           entries.length +
-           " chansons proposées";
-    }
-    entries.forEach(function (e) { list.appendChild(renderEntry(e)); });
   }
+  if (!entries.length) {
+    list.innerHTML =
+      '<p class="entry-card">Aucune chanson proposée pour le moment, soyez le premier !</p>';
+    return;
+  }
+  entries.forEach(function (entry) {
+    list.appendChild(renderEntry(entry));
+  });
+}
 
   function loadEntries() {
     if (!configured) {
