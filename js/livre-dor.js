@@ -1,12 +1,3 @@
-/* ==========================================================================
-   Livre d'or — persistance via Supabase (compatible GitHub Pages)
-   Configuration : voir js/config.js (SITE_CONFIG.supabase)
-   Table attendue : guestbook (id, created_at, first_name, last_name, message)
-
-   Modération : la suppression d'un message se fait depuis le tableau de bord
-   Supabase (la clé service_role n'est jamais exposée côté client).
-   ========================================================================== */
-
 (function () {
   "use strict";
 
@@ -15,14 +6,6 @@
   var successBox = document.getElementById("gb-success");
   var infoBox = document.getElementById("gb-info");
   if (!form || !list) return;
-
-  // Messages d'exemple pour montrer le rendu — à SUPPRIMER une fois le
-  // service connecté (ils disparaissent automatiquement dès que Supabase
-  // est configuré).
-  var DEMO_ENTRIES = [
-    { first_name: "Marie", message: "Nous avons tellement hâte de partager cette journée avec vous !", demo: true },
-    { first_name: "Grand-mère Jeanne", message: "Un amour aussi beau que le vôtre, ça se fête ! À très vite mes chéris.", demo: true }
-  ];
 
   /* ---------- Connexion Supabase ---------- */
   function getClient() {
@@ -48,24 +31,32 @@ function formatDate(dateStr) {
         year: "numeric"
     });
 }
+function getDisplayName(entry) {
+  var firstName = entry.first_name || "";
+  var lastName = entry.last_name || "";
+  return [firstName, lastName]
+    .filter(Boolean)
+    .join(" ");
+}
 function renderEntry(entry) {
-    var card = document.createElement("article");
-    card.className =
-        "entry-card" +
-        (entry.demo ? " entry-card--demo" : "");
-    card.innerHTML =
-        '<p class="entry-card__author">' +
-        escapeHtml(entry.first_name) +
-        '</p>' +
-        (entry.created_at
-            ? '<p class="entry-card__date">' +
-              formatDate(entry.created_at) +
-              '</p>'
-            : '') +
-        '<p class="entry-card__message">« ' +
-        escapeHtml(entry.message) +
-        ' »</p>';
-    return card;
+  var card = document.createElement("article");
+  card.className =
+    "entry-card" +
+    (entry.demo ? " entry-card--demo" : "");
+  var author = getDisplayName(entry);
+  card.innerHTML =
+    '<p class="entry-card__author">' +
+      escapeHtml(author) +
+    "</p>" +
+    (entry.created_at
+      ? '<p class="entry-card__date">' +
+          formatDate(entry.created_at) +
+        "</p>"
+      : "") +
+    '<p class="entry-card__message">« ' +
+      escapeHtml(entry.message) +
+    " »</p>";
+  return card;
 }
 
   function renderList(entries) {
@@ -90,7 +81,7 @@ function renderEntry(entry) {
     }
     client
       .from("guestbook")
-      .select("first_name, message, created_at")
+      .select("first_name, last_name, message, created_at")
       .order("created_at", { ascending: false })
       .limit(100) // limitation raisonnable du nombre de messages affichés
       .then(function (res) {
