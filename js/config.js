@@ -37,6 +37,15 @@ var SITE_CONFIG = {
       price: "à partir de 300€/semaine mobil-home 4 à 6 personnes",
       description: "Ce camping propose des mobil-homes climatisés avec terrasse, piscine et ambiance familiale. Une solution idéale pour séjourner à proximité du mariage et profiter de la Provence.",
       link: "https://www.campinglouparadou.com/"
+    },
+    {
+      name: "Gîtes de France",
+      type: "🏡 Gîtes",
+      image: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0f/45/4f/8e/village-vu-des-ruine.jpg",
+      distance: "À proximité du mariage · plusieurs hébergements disponibles",
+      price: "à partir de 300€/semaine",
+      description: "Les Gîtes de France proposent de nombreux gîtes et chambres d’hôtes dans les environs de Vernègues, avec différentes capacités et gammes de prix. Une bonne option pour celles et ceux qui souhaitent profiter d’un hébergement indépendant ou d’une chambre d’hôtes au cœur de la Provence.",
+      link: "https://www.gites-de-france-bouches-du-rhone.com/la-provence.html?critinit=o&acc=G&instance=env13a&ori=PARTOO&village=0&lieu=insee_13115-distcomm_15&distcomm=5"
     }
   ],
 
