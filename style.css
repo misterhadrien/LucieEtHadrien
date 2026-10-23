@@ -1116,3 +1116,8 @@ h1, h2, h3 {
 .back-to-top[hidden] {
     display: none;
 }
+
+/* Force le masquage du bouton avant le mariage */
+#photos-button[hidden] {
+  display: none !important;
+}
