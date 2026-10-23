@@ -448,16 +448,15 @@
   <script src="script.js"></script>
   
 <script>
-  (() => {
-    const ouverture = new Date("2027-05-15T00:00:00+02:00");
-    const maintenant = new Date();
-    const bouton = document.getElementById("photos-button");
-    const message = document.getElementById("photos-message");
-    if (maintenant >= ouverture) {
-      bouton.hidden = false;
-      message.hidden = true;
-    }
-  })();
+(() => {
+  const ouverture = new Date("2027-05-15T00:00:00+02:00");
+  const bouton = document.getElementById("photos-button");
+  const message = document.getElementById("photos-message");
+  if (!bouton || !message) return;
+  const albumOuvert = new Date() >= ouverture;
+  bouton.hidden = !albumOuvert;
+  message.hidden = albumOuvert;
+})();
 </script>
 
 </body>
